@@ -195,6 +195,15 @@ flex-direction: column;
   font-family: "Microsoft JhengHei", "Heiti TC", sans-serif; /* 黑體字型（中英文通用） */
 }
 
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+}
 .hero h2 {
 
 font-size: 3.5rem;
