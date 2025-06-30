@@ -535,3 +535,18 @@ footer {
         font-size: 0.9rem;
     }
 }
+/* Product Images Styling */
+.product-item img {
+    width: 100%; /* 讓圖片佔滿產品項目的寬度 */
+    max-height: 180px; /* 限制最大高度，可調整 */
+    object-fit: contain; /* 確保圖片完整顯示，不會被裁切 */
+    border-radius: 4px;
+    margin-bottom: 15px;
+    display: block; /* 讓圖片獨立佔據一行 */
+    border: 1px solid var(--border-color); /* 添加邊框 */
+}
+
+/* 移除原有的產品圖片佔位符樣式，因為將被圖片取代 */
+.product-image-placeholder {
+    display: none; /* 隱藏佔位符 */
+}
