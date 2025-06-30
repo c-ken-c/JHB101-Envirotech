@@ -14,10 +14,7 @@ background-color: #f4f4f4;
 
 }
 
-.hero .container {
-  text-align: center; /* 文字水平置中 */
-  font-family: "Microsoft JhengHei", "Heiti TC", sans-serif; /* 黑體字型（中英文通用） */
-}
+
 
 .container {
 
@@ -193,7 +190,10 @@ flex-direction: column;
 
 }
 
-
+.hero .container {
+  text-align: center; /* 文字水平置中 */
+  font-family: "Microsoft JhengHei", "Heiti TC", sans-serif; /* 黑體字型（中英文通用） */
+}
 
 .hero h2 {
 
