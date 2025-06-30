@@ -121,7 +121,7 @@ a:hover {
 
 @media (max-width: 768px) {
     .hero {
-        padding: 40px 15px; /* **手機版調整 padding，減少上方空間** */
+        padding: 30px 15px; /* **手機版調整 padding，進一步減少上方空間** */
     }
 
     .hero h2 {
@@ -135,11 +135,24 @@ a:hover {
     .hero .container {
         width: 95%; /* 手機版 container 寬度調整 */
     }
+
+    .navbar .nav-links li {
+        display: block;
+        margin: 5px 0; /* **減少導航列項目在手機版上的垂直間距** */
+    }
+
+    .section {
+        padding: 20px 0; /* **減少區塊在手機版上的上下內距** */
+    }
+
+    .container {
+        width: 90%;
+    }
 }
 
 /* Sections */
 .section {
-    padding: 60px 0;
+    padding: 60px 0; /* 桌面版維持不變 */
     border-bottom: 1px solid #ddd;
     text-align: center;
 }
@@ -248,7 +261,7 @@ a:hover {
     background: #222;
     color: #fff;
     text-align: center;
-    padding: 30px 0;
+    padding: 20px 0; /* **減少頁腳在桌面版和手機版上的上下內距** */
 }
 
 .footer .footer-sitemap {
@@ -272,32 +285,4 @@ a:hover {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    .navbar .logo {
-        float: none;
-        text-align: center;
-    }
-
-    .navbar .nav-links {
-        float: none;
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    .navbar .nav-links li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    .section {
-        padding: 40px 0;
-    }
-
-    .service-grid, .solution-grid, .product-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .container {
-        width: 90%;
-    }
-}
+/* 這裡的媒體查詢已在上方合併和調整 */
