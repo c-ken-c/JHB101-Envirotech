@@ -1,329 +1,271 @@
 <!DOCTYPE html>
-
-<html lang="zh-Hant">
-
+<html lang="zh-TW">
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>承信環境公司 - 專業環境解決方案提供者</title>
-
-<link rel="stylesheet" href="style.css">
-
-<!-- 引入 Font Awesome 圖示庫 (用於社群媒體圖示等) -->
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>承信環境公司 - 水處理應用薄膜環境解決方案提供者</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        header h1 {
+            color: #2c3e50;
+            font-size: 2.5em; /* 承信環境公司 */
+            margin-bottom: 5px;
+        }
+        header p {
+            color: #34495e;
+            font-size: 1.2em;
+            margin-top: 5px;
+            margin-bottom: 2px;
+        }
+        header p:nth-of-type(2) {
+            font-weight: bold;
+            font-size: 1.5em; /* 創新技術、誠信服務與永續發展 */
+        }
+        section {
+            margin-bottom: 40px;
+            padding: 20px 0;
+            border-top: 1px solid #eee;
+        }
+        section:first-of-type {
+            border-top: none;
+        }
+        h2 {
+            color: #2980b9;
+            font-size: 2em;
+            margin-bottom: 15px;
+            text-align: center;
+            border-bottom: 2px solid #2980b9;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-left: auto;
+            margin-right: auto;
+            width: auto;
+            display: block; /* Ensure the underline spans content width */
+        }
+        h3 {
+            color: #3498db;
+            font-size: 1.5em;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        h4 {
+            color: #555;
+            font-size: 1.2em;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 25px;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .section-content {
+            padding-left: 15px;
+            border-left: 3px solid #f39c12;
+            margin-bottom: 20px;
+        }
+        .solution-item, .application-item {
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            border: 1px solid #dde2e6;
+        }
+        .solution-item h3, .application-item h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .solution-item ul, .application-item ul {
+            list-style-type: none;
+            margin-left: 0;
+            padding: 0;
+        }
+        .solution-item ul li, .application-item ul li {
+            margin-bottom: 5px;
+        }
+        .solution-item ul li strong {
+            color: #e67e22;
+        }
+        .contact-info {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .contact-info img {
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        .contact-info p {
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+        .contact-info a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .image-placeholder {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
-
 <body>
-
-
-
-<!-- 導覽列 (Navbar) -->
-
-<nav class="navbar">
-
-<div class="container">
-
-<h1 class="logo">承信環境公司</h1>
-
-<ul class="nav-links">
-
-<li><a href="#about">關於我們</a></li>
-
-<li><a href="#services">服務項目</a></li>
-
-<li><a href="#solutions">解決方案</a></li>
-
-<li><a href="#products">產品應用</a></li>
-
-<li><a href="#contact">聯絡我們</a></li>
-
-</ul>
-
-</div>
-
-</nav>
-
-
-
-<!-- 主視覺區塊 (Hero Section) -->
-
-<section class="hero">
-
-<div class="container">
-
-<h2>承信環境公司</h2>
-
-<p>專業環境解決方案提供者</p>
-
-<p><strong>創新技術、誠信服務與永續發展</strong></p>
-
-<a href="#services" class="btn">了解我們的服務</a>
-
-</div>
-
-</section>
-
-
-
-<!-- 關於我們區塊 (About Us) -->
-
-<section id="about" class="section">
-
-<div class="container">
-
-<h3>關於我們</h3>
-
-<p><strong>承信環境公司</strong> 致力於提供全面的環境工程解決方案，結合先進的智慧物聯網技術，提升運作效率，實現環境保護與經濟效益的雙贏。</p>
-
-<p>我們的核心技術涵蓋從初始需求探討、用地勘查、計算模擬、質量平衡，到後續設備採購、安裝配管、功能試俥及教育訓練等，建構專業化與科學化服務準則。</p>
-
-</div>
-
-</section>
-
-
-
-<!-- 服務項目區塊 (Services) -->
-
-<section id="services" class="section bg-light">
-
-<div class="container">
-
-<h3>主要服務項目</h3>
-
-<div class="service-grid">
-
-<div class="service-item">
-
-<h4>水資源管理</h4>
-
-<p>提供製程用水、事業廢水及雨水回收的成熟且高經濟性解決方案。</p>
-
-<a href="#solutions" class="learn-more">瞭解更多</a>
-
-</div>
-
-<div class="service-item">
-
-<h4>廢污水處理</h4>
-
-<p>涵蓋規劃設計及圖說送審的統包 (Turn-Key) 工程規劃設計。</p>
-
-<a href="#solutions" class="learn-more">瞭解更多</a>
-
-</div>
-
-<div class="service-item">
-
-<h4>智慧環境監測</h4>
-
-<p>應用雲端服務與智能管理，達成「最適化」運轉及自我診斷，提升環境監測與管理效率。</p>
-
-<a href="#solutions" class="learn-more">瞭解更多</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- 解決方案區塊 (Solutions) -->
-
-<section id="solutions" class="section">
-
-<div class="container">
-
-<h3>我們的解決方案</h3>
-
-<p>我們的解決方案主要由水處理系統和自製設備進行延伸，從基礎的淨水處理與廢水處理至硝酸鹽氮廢水、氫氟酸廢水處理、土壤含油地下水處理等。</p>
-
-<div class="solution-grid">
-
-<div class="solution-item">
-
-<h4>硝酸鹽氮廢水處理</h4>
-
-<p>利用活性污泥法 (MLE-A/O) 搭配生物擔體 (MBBR) 強化硝酸鹽氮脫硝作用。</p>
-
-</div>
-
-<div class="solution-item">
-
-<h4>浮油 (Free Oil) 去除處理</h4>
-
-<p>透過新型改良式CPI油水分離裝置與高效濾材進行處理。</p>
-
-</div>
-
-<div class="solution-item">
-
-<h4>設備維修 / 管線Hook-Up</h4>
-
-<p>提供轉動設備維修安裝服務及水處理系統配管工程，具備甲種職業安全衛生業務主管等相關證照。</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- 產品應用區塊 (Product Applications) -->
-
-<section id="products" class="section bg-light">
-
-<div class="container">
-
-<h3>產品應用</h3>
-
-<p>我們提供多樣化的環境工程產品，可依客戶需求進行高度客製化設計和製造，並提供相關檢測與品管服務。</p>
-
-<div class="product-grid">
-
-<div class="product-item">
-
-<h4>淨水、污水及廢水處理設備</h4>
-
-<p>依客戶需求進行客製化套裝設備製造，提供焊道檢測 (WPS/PQR/NDT) 和廠驗服務。</p>
-
-</div>
-
-<div class="product-item">
-
-<h4>薄膜處理與水資源回收設備</h4>
-
-<p>提供UF/MBR薄膜過濾設備與CIP藥洗裝置，MBR可為中空纖維式或平板式。</p>
-
-</div>
-
-<div class="product-item">
-
-<h4>油水分離與其他設備</h4>
-
-<p>提供多樣化油水分離裝置與相關濾材買賣。</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- 聯絡我們區塊 (Contact Us) -->
-
-<section id="contact" class="section">
-
-<div class="container">
-
-<h3>聯絡我們</h3>
-
-<p>歡迎與我們攜手合作，共創美好環境。</p>
-
-<ul class="contact-info">
-
-<li><i class="fas fa-envelope"></i> Mail: <a href="mailto:sales@chengxin-env.com">sales@chengxin-env.com</a></li>
-
-<li><i class="fas fa-phone-alt"></i> TEL: +886-X-XXXXXXX</li>
-
-<li><i class="fas fa-fax"></i> FAX: +886-X-XXXXXXX</li>
-
-<li><i class="fas fa-map-marker-alt"></i> 地址: 您的公司地址</li>
-
-</ul>
-
-<div class="social-links">
-
-<a href="#" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
-
-<a href="#" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a>
-
-</div>
-
-<p class="language-options">
-
-語言: <a href="#">繁體中文</a> | <a href="#">English</a>
-
-</p>
-
-</div>
-
-</section>
-
-
-
-<!-- 頁尾 (Footer) -->
-
-<footer class="footer">
-
-<div class="container">
-
-<p>&copy; 2023 承信環境公司. All Rights Reserved.</p>
-
-<ul class="footer-sitemap">
-
-<li><a href="#about">關於我們</a></li>
-
-<li><a href="#services">服務項目</a></li>
-
-<li><a href="#solutions">解決方案</a></li>
-
-<li><a href="#products">產品應用</a></li>
-
-<li><a href="#contact">聯絡我們</a></li>
-
-<!-- 更多網站地圖項目可在此處添加，指向頁面內部的區塊 -->
-
-</ul>
-
-</div>
-
-</footer>
-
-
-
-<!-- JavaScript for smooth scrolling (Optional) -->
-
-<script>
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
-anchor.addEventListener('click', function (e) {
-
-e.preventDefault();
-
-
-
-document.querySelector(this.getAttribute('href')).scrollIntoView({
-
-behavior: 'smooth'
-
-});
-
-});
-
-});
-
-</script>
-
-
-
+    <div class="container">
+        <header>
+            <h1>承信環境公司</h1>
+            <p>水處理應用薄膜環境解決方案提供者</p>
+            <p>創新技術、誠信服務與永續發展</p>
+        </header>
+
+        <section id="about-us">
+            <h2>關於我們</h2>
+            <p>我們致力於提供全面的水處理環境工程解決方案，並代理自新加坡美能材料科技有限公司（Memstar Technology Ltd.）[1]。美能材料科技有限公司是一家在新加坡證券交易所主板掛牌的高科技企業，專注於中空纖維膜及其應用產品的研發、生產與製造，並獲得新加坡經濟發展局（EDB）的支持[1]。美能已成為全球少數具備高效中空纖維膜製造能力的企業之一[1]。</p>
+        </section>
+
+        <section id="services">
+            <h2>主要項目服務</h2>
+            
+            <div class="service-item">
+                <h3>製造能力</h3>
+                <ul>
+                    <li><strong>主項目說明：</strong> 同時掌握 NIPS 與 TIPS 製膜技術 [1]</li>
+                    <li><strong>瞭解更多：</strong> 美能同時掌握 NIPS 與 TIPS 製膜技術，擁有嚴謹的生產管理體系與經驗豐富的管理團隊，先進的中空纖維膜及膜組件生產線，具備年產 500 萬平方米聚偏二氟乙烯（PVDF）與聚醚碸（PES）材質之微濾／超濾膜的產能，並設有年產 20 萬台家用水處理設備的生產線 [1]。</li>
+                </ul>
+                <div class="image-placeholder">
+                    <!-- 圖片建議放置：薄膜.png, 薄膜孔徑.png -->
+                    <img src="薄膜.png" alt="薄膜示意圖">
+                    <img src="薄膜孔徑.png" alt="薄膜孔徑圖">
+                </div>
+            </div>
+
+            <div class="service-item">
+                <h3>技術服務</h3>
+                <ul>
+                    <li><strong>主項目說明：</strong> 薄膜產品的評估及使用建議 [2]</li>
+                    <li><strong>瞭解更多：</strong> 我們致力於提供性能卓越的超濾膜產品，並提供以下技術支援與服務[2]：
+                        <ul>
+                            <li>膜污染分析與專業清洗建議 [2]</li>
+                            <li>膜產品的技術交流與應用培訓 [2]</li>
+                            <li>膜污染原因診斷與解決方案建議 [2]</li>
+                            <li>工程現場之技術指導與膜異常狀況的緊急處理建議 [2]</li>
+                        </ul>
+                        公司配備業界領先的檢測與實驗設備，能夠協助客戶分析系統運行中可能遭遇的膜污染或性能異常問題，並依據實際情況提供專業的清洗與維護對策 [2]。
+                    </li>
+                </ul>
+            </div>
+
+            <div class="service-item">
+                <h3>專案研究</h3>
+                <ul>
+                    <li><strong>主項目說明：</strong> 跨域水處理技術研究 [2]</li>
+                    <li><strong>瞭解更多：</strong> 針對工業廢水、市政汙水處理、海水淡化等進行膜分離技術開發與效能優化，提升水資源再利用效率 [2]。</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="solutions">
+            <h2>我們的解決方案</h2>
+            <p>我們的解決方案主要由Memstar團隊多年累積的經驗進行專案設計研究，及設備的使用評估，確保專案的執行成功率 [2]。</p>
+            
+            <div class="solution-item">
+                <h3>超濾膜（UF）</h3>
+                <ul>
+                    <li><strong>主項目說明：</strong> 超濾膜技術應用開發 [2]</li>
+                    <li><strong>更多說明：</strong> 研究超濾膜在工業與生活污水處理中之截留效率與模組化設計，提升出水品質與運行穩定性 [2]。</li>
+                </ul>
+                <div class="image-placeholder">
+                    <!-- 圖片建議放置：UF system.jpg, UF.jpg, UF 實體照1.png -->
+                    <img src="UF system.jpg" alt="UF 系統示意圖">
+                    <img src="UF.jpg" alt="UF 薄膜">
+                    <img src="UF 實體照1.png" alt="UF 實體照">
+                </div>
+            </div>
+
+            <div class="solution-item">
+                <h3>膜生物反應器（MBR）</h3>
+                <ul>
+                    <li><strong>主項目說明：</strong> MBR系統效能優化 [2]</li>
+                    <li><strong>更多說明：</strong> 針對市政與工業污水處理中的MBR運作參數與膜污染控制策略進行整合研究，強化系統持續性 [2]。</li>
+                </ul>
+                <div class="image-placeholder">
+                    <!-- 圖片建議放置：MBR system.jpg, MBR.jpg -->
+                    <img src="MBR system.jpg" alt="MBR 系統示意圖">
+                    <img src="MBR.jpg" alt="MBR 薄膜">
+                </div>
+            </div>
+
+            <div class="solution-item">
+                <h3>整合應用</h3>
+                <ul>
+                    <li><strong>主項目說明：</strong> UF/MBR等混合流程 [3]</li>
+                    <li><strong>更多說明：</strong> 結合超濾與MBR技術探討高負荷污水處理之可行性與經濟效益，實現低碳節能排放目標 [3]。</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="products">
+            <h2>產品應用</h2>
+            <p>我們提供了全球頂尖的薄膜產品進行水處理的應用 [3]。</p>
+            
+            <div class="application-item">
+                <h3>淨水、污水及廢水處理設備</h3>
+                <p>依照專案規模、需求進行薄膜使用規劃，確保短期建置及長期營運可靠性 [3]。</p>
+            </div>
+
+            <div class="application-item">
+                <h3>薄膜處理與水資源回收設備</h3>
+                <p>提供薄膜(UF及MBR)設計，有效搭配其他流程設計穩定性 [3]。</p>
+            </div>
+
+            <div class="application-item">
+                <h3>海水淡化及其他水資源活用</h3>
+                <p>提供專業海水淡化技術及專案應用 [3]。</p>
+            </div>
+        </section>
+
+        <section id="contact-us" class="contact-info">
+            <h2>聯絡我們</h2>
+            <img src="Envirotech Logo.png" alt="JHB EnviroTECH, INC. Logo"> <!-- 建議使用 Envirotech Logo.png 或 logo.png -->
+            <p>JHB EnviroTECH, INC. [3]</p>
+            <p>32056 13F., No65, Sec. 1 QingFeng Rd., Zhongli Disk., Taoyuan City, Taiwan [3]</p>
+            <p>32056 桃園市中壢區青峰路一段65號13樓 [3]</p>
+            <p>Tel: <a href="tel:+886-03-287-3678">+886-03-287-3678</a> [3]</p>
+            <p>Email: <a href="mailto:Neal@jhb-envirotech.com.tw">Neal@jhb-envirotech.com.tw</a> [3]</p>
+        </section>
+    </div>
 </body>
-
 </html>
-
-
