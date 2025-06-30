@@ -359,3 +359,78 @@ footer {
         font-size: 1.8rem;
     }
 }
+/* New Contact Section (Contact Footer Style) */
+.contact-footer {
+    background: linear-gradient(to right, #ffdd57, #ffc300); /* 黃色漸層背景 */
+    color: #333; /* 文字顏色，確保在黃色背景上清晰可見 */
+    padding: 60px 0; /* 調整內邊距 */
+    text-align: center;
+}
+
+.contact-footer h2 { /* 移除 Contact 區塊標題的底線和置中 */
+    display: none; /* 隱藏原有的 H2 標題，因為新的設計中不需要 */
+}
+
+.contact-footer .container {
+    padding: 0 20px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 自動調整為三欄或更少 */
+    gap: 30px; /* 欄位間距 */
+    align-items: flex-start; /* 確保內容從頂部對齊 */
+}
+
+.contact-column {
+    background-color: rgba(255, 255, 255, 0.9); /* 輕微透明的白色背景 */
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: left; /* 內容左對齊 */
+    height: 100%; /* 確保高度一致 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.contact-column h3 {
+    color: var(--heading-color); /* 深色標題 */
+    font-size: 1.6rem; /* 標題字體大小 */
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color); /* 底部強調線 */
+    padding-bottom: 10px;
+}
+
+.contact-column p {
+    font-size: 1.1rem; /* 內文字體大小 */
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.contact-column a {
+    color: var(--primary-color); /* 連結顏色 */
+    font-weight: normal; /* 連結不加粗 */
+    transition: color 0.3s ease;
+}
+
+.contact-column a:hover {
+    color: #003f80;
+    text-decoration: underline;
+}
+
+/* Responsive adjustment for Contact Section */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* 小螢幕下變為單欄 */
+    }
+    .contact-column {
+        text-align: center; /* 單欄時內容置中 */
+    }
+    .contact-column h3 {
+        border-bottom: none; /* 單欄時移除標題底線 */
+        padding-bottom: 0;
+    }
+}
