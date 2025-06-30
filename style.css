@@ -92,7 +92,7 @@ a:hover {
     text-align: center; /* 確保內部文字置中 */
     padding: 100px 20px; /* 增加左右 padding 以免內容貼邊 */
     min-height: 400px;
-    background: url('你的背景圖片路徑') no-repeat center center / cover;
+    /*background: url('你的背景圖片路徑') no-repeat center center / cover;*/
     box-sizing: border-box; /* 確保 padding 不會增加總寬度 */
 }
 
