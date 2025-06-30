@@ -56,7 +56,7 @@ a:hover {
 
 @media (max-width: 768px) {
     .navbar {
-        padding: 40px 15px; /* **從 80px 調整為 40px，大幅減少手機版上下的內距** */
+        padding: 0.1rem 0;
     }
 }
 
@@ -92,7 +92,7 @@ a:hover {
     text-align: center; /* 確保內部文字置中 */
     padding: 100px 20px; /* 增加左右 padding 以免內容貼邊 */
     min-height: 400px;
-    /*background: url('你的背景圖片路徑') no-repeat center center / cover;*/
+    background: url('你的背景圖片路徑') no-repeat center center / cover;
     box-sizing: border-box; /* 確保 padding 不會增加總寬度 */
 }
 
@@ -121,7 +121,7 @@ a:hover {
 
 @media (max-width: 768px) {
     .hero {
-        padding: 80px 15px; /* 手機版調整 padding */
+        padding: 40px 15px; /* **手機版調整 padding，減少上方空間** */
     }
 
     .hero h2 {
