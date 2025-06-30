@@ -1,314 +1,305 @@
 /* General Styling */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+    font-family: Arial, sans-serif; [3]
+    margin: 0; [3]
+    line-height: 1.6; [3]
+    color: #333; [3]
+    background-color: #f4f4f4; [3]
 }
 
 .container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-    padding: 20px 0;
-    text-align: center; /* 文字水平置中 */
-    font-family: "Microsoft JhengHei", "Heiti TC", sans-serif;
+    width: 80%; [3]
+    margin: auto; [3]
+    overflow: hidden; [3]
+    padding: 20px 0; [3]
+    text-align: center; /* 文字水平置中 */ [3]
+    font-family: "Microsoft JhengHei", "Heiti TC", sans-serif; [3]
 }
 
 h1, h2, h3, h4 {
-    color: #333;
+    color: #333; [3]
 }
 
 a {
-    color: #007bff;
-    text-decoration: none;
+    color: #007bff; [3]
+    text-decoration: none; [3]
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: underline; [3]
 }
 
 .btn {
-    display: inline-block;
-    color: #fff;
-    background: #007bff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-top: 20px;
+    display: inline-block; [3]
+    color: #fff; [3]
+    background: #007bff; [3]
+    padding: 10px 20px; [3]
+    border-radius: 5px; [4]
+    margin-top: 20px; [4]
 }
 
 .btn:hover {
-    background: #f0e68c;
-    color: #fff;
-    text-decoration: none;
+    background: #f0e68c; [4]
+    color: #fff; [4]
+    text-decoration: none; [4]
 }
 
 /* Navbar */
-
 .navbar {
-background: #f0e68c;
-color: #fff;
-padding: 0.25rem 0;
-position: sticky;
-top: 0;
-z-index: 1000;
-}
-@media (max-width: 768px) {
-  .navbar {
-    padding: 0.1rem 0;
-  }
+    background: #f0e68c; /* 淺黃色底色 */ [4]
+    color: #fff; /* 白色文字 */ [4]
+    padding: 0.25rem 0; [4]
+    position: sticky; [4]
+    top: 0; [4]
+    z-index: 1000; [4]
 }
 
-/*.navbar .logo {*/
-/*float: left;*/
-/*margin: 0;*/
-/*padding-top: 5px;*/
-/*font-size: 1.8rem;*/
-}*/
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.1rem 0; /* 手機版導覽列高度最小 */ [4]
+    }
+}
+
+.navbar .logo {
+    float: left; /* 電腦版靠左浮動 */ /* 基於對話歷史及程式碼結構 */
+    margin: 0; /* 基於對話歷史及程式碼結構 */
+    padding-top: 5px; /* 基於對話歷史及程式碼結構 */
+    font-size: 1.8rem; /* 基於對話歷史及程式碼結構 */
+}
 
 .navbar .nav-links {
-list-style: none;
-float: right;
-margin: 0;
-padding: 0;
+    list-style: none; [4]
+    float: right; /* 電腦版導覽連結靠右 */ [4]
+    margin: 0; [4]
+    padding: 0; [4]
 }
 
 .navbar .nav-links li {
-display: inline;
-margin-left: 20px;
+    display: inline; [1]
+    margin-left: 20px; [1]
 }
 
 .navbar .nav-links a {
-color: #fff;
-font-weight: bold;
-/*padding: 5px 0;*/
-transition: all 0.3s ease;
+    color: #fff; /* 白色文字 */ [1]
+    font-weight: bold; [1]
+    /*padding: 5px 0;*/ /* 來源中已註解 [1] */
+    transition: all 0.3s ease; [1]
 }
 
 .navbar .nav-links a:hover {
-color: #007bff;
-text-decoration: none;
+    color: #007bff; [1]
+    text-decoration: none; [1]
 }
 
 /* Hero Section */
 .hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    padding: 100px 0;
-    min-height: 400px;
-    background: url('你的背景圖片路徑') no-repeat center center / cover;
+    display: flex; [1]
+    align-items: center; [1]
+    justify-content: center; [1]
+    flex-direction: column; [1]
+    text-align: center; /* 電腦版及手機版皆置中 */ [1]
+    padding: 100px 0; [1]
+    min-height: 400px; [1]
+    background: url('你的背景圖片路徑') no-repeat center center / cover; [1]
 }
 
 .hero h2 {
-    font-size: 3.5rem;
-    margin-bottom: 10px;
-    color: #fff;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    font-size: 3.5rem; [2]
+    margin-bottom: 10px; [2]
+    color: #000; /* 黑色文字 */
+    /* 調整 text-shadow 以模擬白色外框效果 (此為通用 CSS 技術，非直接來自單一來源值) */
+    text-shadow:
+        1px 1px 0 #fff,
+        -1px -1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+        2px 2px 0 #fff;
 }
 
 .hero p {
-    color: #fff;
-    margin-top: 0;
-    max-width: 800px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    font-size: 1.5rem;
+    color: #000; /* 黑色文字 */
+    margin-top: 0; [2]
+    max-width: 800px; [2]
+    /* 調整 text-shadow 以模擬白色外框效果 (此為通用 CSS 技術，非直接來自單一來源值) */
+    text-shadow:
+        1px 1px 0 #fff,
+        -1px -1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff;
+    font-size: 1.5rem; [2]
 }
 
 @media (max-width: 768px) {
     .hero h2 {
-        font-size: 2.5rem;
+        font-size: 2.5rem; [2]
     }
-
     .hero p {
-        font-size: 1.2rem;
-    }
-}
-
-
-
-@media (max-width: 768px) {
-    .hero h2 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
+        font-size: 1.2rem; [2]
     }
 }
 
 /* Sections */
 .section {
-    padding: 60px 0;
-    border-bottom: 1px solid #ddd;
-    text-align: center;
+    padding: 60px 0; [2]
+    border-bottom: 1px solid #ddd; [2]
+    text-align: center; [2]
 }
 
 .section:last-of-type {
-    border-bottom: none;
+    border-bottom: none; [2]
 }
 
 .section h3 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    position: relative;
-    padding-bottom: 10px;
+    font-size: 2.5rem; [5]
+    margin-bottom: 30px; [5]
+    position: relative; [5]
+    padding-bottom: 10px; [5]
 }
 
 .section h3::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: #007bff;
+    content: ''; [5]
+    position: absolute; [5]
+    left: 50%; [5]
+    bottom: 0; [5]
+    transform: translateX(-50%); [5]
+    width: 60px; [5]
+    height: 3px; [5]
+    background: #007bff; [5]
 }
 
 .section.bg-light {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; [5]
 }
 
 /* Service Grid */
 .service-grid, .solution-grid, .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    display: grid; [5]
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); [5]
+    gap: 30px; [6]
+    margin-top: 40px; [6]
 }
 
 .service-item, .solution-item, .product-item {
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
+    background: #fff; [6]
+    padding: 30px; [6]
+    border-radius: 8px; [6]
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); [6]
+    text-align: center; [6]
+    transition: transform 0.3s ease; [6]
 }
 
 .service-item:hover, .solution-item:hover, .product-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); [6]
 }
 
 .service-item h4, .solution-item h4, .product-item h4 {
-    font-size: 1.8rem;
-    margin-top: 0;
-    color: #007bff;
+    font-size: 1.8rem; [6]
+    margin-top: 0; [6]
+    color: #007bff; [6]
 }
 
 .learn-more {
-    display: inline-block;
-    margin-top: 15px;
-    font-weight: bold;
+    display: inline-block; [6]
+    margin-top: 15px; [6]
+    font-weight: bold; [6]
 }
 
 /* Contact Info */
 .contact-info {
-    list-style: none;
-    padding: 0;
-    margin-top: 30px;
+    list-style: none; [6]
+    padding: 0; [6]
+    margin-top: 30px; [7]
 }
 
 .contact-info li {
-    margin-bottom: 10px;
-    font-size: 1.1rem;
+    margin-bottom: 10px; [7]
+    font-size: 1.1rem; [7]
 }
 
 .contact-info li i {
-    margin-right: 10px;
-    color: #007bff;
+    margin-right: 10px; [7]
+    color: #007bff; [7]
 }
 
 .social-links {
-    margin-top: 30px;
+    margin-top: 30px; [7]
 }
 
 .social-links a {
-    margin: 0 10px;
-    color: #333;
-    transition: color 0.3s ease;
+    margin: 0 10px; [7]
+    color: #333; [7]
+    transition: color 0.3s ease; [7]
 }
 
 .social-links a:hover {
-    color: #007bff;
+    color: #007bff; [7]
 }
 
 .language-options {
-    margin-top: 20px;
-    font-size: 0.9rem;
+    margin-top: 20px; [7]
+    font-size: 0.9rem; [7]
 }
 
 .language-options a {
-    margin: 0 5px;
+    margin: 0 5px; [7]
 }
 
 /* Footer */
 .footer {
-    background: #222;
-    color: #fff;
-    text-align: center;
-    padding: 30px 0;
+    background: #222; [8]
+    color: #fff; [8]
+    text-align: center; [8]
+    padding: 30px 0; [8]
 }
 
 .footer .footer-sitemap {
-    list-style: none;
-    padding: 0;
-    margin-top: 15px;
+    list-style: none; [8]
+    padding: 0; [8]
+    margin-top: 15px; [8]
 }
 
 .footer .footer-sitemap li {
-    display: inline;
-    margin: 0 10px;
+    display: inline; [8]
+    margin: 0 10px; [8]
 }
 
 .footer .footer-sitemap a {
-    color: #ccc;
-    font-size: 0.9rem;
+    color: #ccc; [8]
+    font-size: 0.9rem; [8]
 }
 
 .footer .footer-sitemap a:hover {
-    color: #fff;
+    color: #fff; [8]
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar .logo {
-        float: none;
-        text-align: center;
+        float: none; [8]
+        text-align: center; [9]
     }
-
     .navbar .nav-links {
-        float: none;
-        text-align: center;
-        margin-top: 10px;
+        float: none; [9]
+        text-align: center; [9]
+        margin-top: 10px; [9]
     }
-
     .navbar .nav-links li {
-        display: block;
-        margin: 10px 0;
+        display: block; [9]
+        margin: 5px 0; /* 調整為 5px 讓文字更緊密 */
     }
-
     .hero h2 {
-        font-size: 2.5rem;
+        font-size: 2.5rem; [9]
     }
-
     .hero p {
-        font-size: 1.2rem;
+        font-size: 1.2rem; [9]
     }
-
     .section {
-        padding: 40px 0;
+        padding: 40px 0; [9]
     }
-
     .service-grid, .solution-grid, .product-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; [9]
     }
-
     .container {
-        width: 90%;
+        width: 90%; [9]
     }
 }
