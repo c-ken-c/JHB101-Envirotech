@@ -1,261 +1,303 @@
 /* General Styling */
 body {
-font-family: Arial, sans-serif;
-margin: 0;
-line-height: 1.6;
-color: #333;
-background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
 }
+
 .container {
-width: 80%;
-margin: auto;
-overflow: hidden;
-padding: 20px 0;
-text-align: center; /* 文字水平置中 */
-font-family: "Microsoft JhengHei", "Heiti TC", sans-serif;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+    text-align: center; /* 文字水平置中 */
+    font-family: "Microsoft JhengHei", "Heiti TC", sans-serif;
 }
+
 h1, h2, h3, h4 {
-color: #333;
+    color: #333;
 }
+
 a {
-color: #007bff;
-text-decoration: none;
+    color: #007bff;
+    text-decoration: none;
 }
+
 a:hover {
-text-decoration: underline;
+    text-decoration: underline;
 }
+
 .btn {
-display: inline-block;
-color: #fff;
-background: #007bff;
-padding: 10px 20px;
-border-radius: 5px;
-margin-top: 20px;
+    display: inline-block;
+    color: #fff;
+    background: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
 }
+
 .btn:hover {
-background: #f0e68c;
-color: #fff;
-text-decoration: none;
+    background: #f0e68c;
+    color: #fff;
+    text-decoration: none;
 }
+
 /* Navbar */
 .navbar {
-background: #f0e68c;
-color: #fff;
-padding: 0.25rem 0;
-position: sticky;
-top: 0;
-z-index: 1000;
+    background: #f0e68c;
+    color: #fff;
+    padding: 0.25rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
+
 @media (max-width: 768px) {
-.navbar {
-padding: 0.1rem 0;
+    .navbar {
+        padding: 0.1rem 0;
+    }
 }
-}
-/*.navbar .logo {*/
-/*float: left;*/
-/*margin: 0;*/
-/*padding-top: 5px;*/
-/*font-size: 1.8rem;*/
-}*/
+
 .navbar .nav-links {
-list-style: none;
-float: right;
-margin: 0;
-padding: 0;
+    list-style: none;
+    float: right;
+    margin: 0;
+    padding: 0;
 }
+
 .navbar .nav-links li {
-display: inline;
-margin-left: 20px;
+    display: inline;
+    margin-left: 20px;
 }
+
 .navbar .nav-links a {
-color: #fff;
-font-weight: bold;
-/*padding: 5px 0;*/
-transition: all 0.3s ease;
+    color: #fff;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
+
 .navbar .nav-links a:hover {
-color: #007bff;
-text-decoration: none;
+    color: #007bff;
+    text-decoration: none;
 }
+
 /* Hero Section */
 .hero {
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-text-align: center;
-padding: 100px 0;
-min-height: 400px;
-background: url('你的背景圖片路徑') no-repeat center center / cover;
+    display: flex;
+    align-items: center; /* 垂直置中 */
+    justify-content: center; /* 水平置中 */
+    flex-direction: column; /* 讓內容垂直排列 */
+    text-align: center; /* 確保內部文字置中 */
+    padding: 100px 20px; /* 增加左右 padding 以免內容貼邊 */
+    min-height: 400px;
+    background: url('你的背景圖片路徑') no-repeat center center / cover;
+    box-sizing: border-box; /* 確保 padding 不會增加總寬度 */
 }
+
+.hero .container {
+    width: 100%; /* 在 hero 區塊內，container 寬度設為 100% 以更好地控制文字置中 */
+    max-width: 1200px; /* 設置最大寬度，避免在超大螢幕上過寬 */
+    margin: 0 auto; /* 確保 container 本身也置中 */
+}
+
 .hero h2 {
-font-size: 3.5rem;
-margin-bottom: 10px;
-color: #fff;
-text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    word-break: break-word; /* 防止長單詞溢出 */
 }
+
 .hero p {
-color: #fff;
-margin-top: 0;
-max-width: 800px;
-text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-font-size: 1.5rem;
+    color: #fff;
+    margin-top: 0;
+    max-width: 800px; /* 限制段落最大寬度，避免過長 */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    font-size: 1.5rem;
+    word-break: break-word; /* 防止長單詞溢出 */
 }
+
 @media (max-width: 768px) {
-.hero h2 {
-font-size: 2.5rem;
+    .hero {
+        padding: 80px 15px; /* 手機版調整 padding */
+    }
+
+    .hero h2 {
+        font-size: 2.2rem; /* 手機版字體縮小 */
+    }
+
+    .hero p {
+        font-size: 1.1rem; /* 手機版字體縮小 */
+    }
+
+    .hero .container {
+        width: 95%; /* 手機版 container 寬度調整 */
+    }
 }
-.hero p {
-font-size: 1.2rem;
-}
-}
-@media (max-width: 768px) {
-.hero h2 {
-font-size: 2.5rem;
-}
-.hero p {
-font-size: 1.2rem;
-}
-}
+
 /* Sections */
 .section {
-padding: 60px 0;
-border-bottom: 1px solid #ddd;
-text-align: center;
+    padding: 60px 0;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
 }
+
 .section:last-of-type {
-border-bottom: none;
+    border-bottom: none;
 }
+
 .section h3 {
-font-size: 2.5rem;
-margin-bottom: 30px;
-position: relative;
-padding-bottom: 10px;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
 }
+
 .section h3::after {
-content: '';
-position: absolute;
-left: 50%;
-bottom: 0;
-transform: translateX(-50%);
-width: 60px;
-height: 3px;
-background: #007bff;
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: #007bff;
 }
+
 .section.bg-light {
-background-color: #f9f9f9;
+    background-color: #f9f9f9;
 }
+
 /* Service Grid */
 .service-grid, .solution-grid, .product-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-gap: 30px;
-margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
 }
+
 .service-item, .solution-item, .product-item {
-background: #fff;
-padding: 30px;
-border-radius: 8px;
-box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-text-align: center;
-transition: transform 0.3s ease;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
 }
+
 .service-item:hover, .solution-item:hover, .product-item:hover {
-transform: translateY(-5px);
+    transform: translateY(-5px);
 }
+
 .service-item h4, .solution-item h4, .product-item h4 {
-font-size: 1.8rem;
-margin-top: 0;
-color: #007bff;
+    font-size: 1.8rem;
+    margin-top: 0;
+    color: #007bff;
 }
+
 .learn-more {
-display: inline-block;
-margin-top: 15px;
-font-weight: bold;
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: bold;
 }
+
 /* Contact Info */
 .contact-info {
-list-style: none;
-padding: 0;
-margin-top: 30px;
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
 }
+
 .contact-info li {
-margin-bottom: 10px;
-font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
 }
+
 .contact-info li i {
-margin-right: 10px;
-color: #007bff;
+    margin-right: 10px;
+    color: #007bff;
 }
+
 .social-links {
-margin-top: 30px;
+    margin-top: 30px;
 }
+
 .social-links a {
-margin: 0 10px;
-color: #333;
-transition: color 0.3s ease;
+    margin: 0 10px;
+    color: #333;
+    transition: color 0.3s ease;
 }
+
 .social-links a:hover {
-color: #007bff;
+    color: #007bff;
 }
+
 .language-options {
-margin-top: 20px;
-font-size: 0.9rem;
+    margin-top: 20px;
+    font-size: 0.9rem;
 }
+
 .language-options a {
-margin: 0 5px;
+    margin: 0 5px;
 }
+
 /* Footer */
 .footer {
-background: #222;
-color: #fff;
-text-align: center;
-padding: 30px 0;
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
 }
+
 .footer .footer-sitemap {
-list-style: none;
-padding: 0;
-margin-top: 15px;
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
 }
+
 .footer .footer-sitemap li {
-display: inline;
-margin: 0 10px;
+    display: inline;
+    margin: 0 10px;
 }
+
 .footer .footer-sitemap a {
-color: #ccc;
-font-size: 0.9rem;
+    color: #ccc;
+    font-size: 0.9rem;
 }
+
 .footer .footer-sitemap a:hover {
-color: #fff;
+    color: #fff;
 }
+
 /* Responsive Design */
 @media (max-width: 768px) {
-.navbar .logo {
-float: none;
-text-align: center;
-}
-.navbar .nav-links {
-float: none;
-text-align: center;
-margin-top: 10px;
-}
-.navbar .nav-links li {
-display: block;
-margin: 10px 0;
-}
-.hero h2 {
-font-size: 2.5rem;
-}
-.hero p {
-font-size: 1.2rem;
-}
-.section {
-padding: 40px 0;
-}
-.service-grid, .solution-grid, .product-grid {
-grid-template-columns: 1fr;
-}
-.container {
-width: 90%;
-}
+    .navbar .logo {
+        float: none;
+        text-align: center;
+    }
+
+    .navbar .nav-links {
+        float: none;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .navbar .nav-links li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .section {
+        padding: 40px 0;
+    }
+
+    .service-grid, .solution-grid, .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        width: 90%;
+    }
 }
