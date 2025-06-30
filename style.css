@@ -39,13 +39,14 @@ a:hover {
 }
 
 .btn:hover {
-    background: #0056b3;
+    background: #f0e68c;
+    color: #fff;
     text-decoration: none;
 }
 
 /* Navbar */
 .navbar {
-    background: #333;
+    background: #f0e68c;
     color: #fff;
     padding: 1rem 0;
     position: sticky;
