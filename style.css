@@ -126,15 +126,15 @@ nav ul li a:hover {
 
 /* Hero Section */
 #hero {
-    background: url('https://raw.githubusercontent.com/c-ken-c/JHB101-Envirotech/main/hero-bg.jpg') no-repeat center center/cover;
+    background: url('https://raw.githubusercontent.com/rawpixel_images/5903616/photo-image-background-public-domain-blue.jpg') no-repeat center center/cover; /* 新的背景圖片 */
     color: white;
     text-align: center;
-    padding: 150px 20px;
+    padding: 80px 20px; /* 調整內邊距以縮小高度 */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 500px;
+    min-height: 280px; /* 縮小最小高度 */
     position: relative;
 }
 
@@ -155,8 +155,8 @@ nav ul li a:hover {
 }
 
 #hero h2 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
+    font-size: 3rem; /* 稍微調整字體大小，使其在較小高度下仍清晰 */
+    margin-bottom: 15px; /* 調整間距 */
     color: white;
     line-height: 1.2;
 }
@@ -166,11 +166,37 @@ nav ul li a:hover {
 }
 
 #hero p {
-    font-size: 1.5rem;
-    max-width: 800px;
+    font-size: 1.3rem; /* 稍微調整字體大小 */
+    max-width: 700px; /* 調整最大寬度 */
     margin: 0 auto;
 }
 
+/* Responsive adjustment for Hero Section */
+@media (max-width: 768px) {
+    #hero {
+        padding: 60px 20px;
+        min-height: 220px;
+    }
+    #hero h2 {
+        font-size: 2.2rem;
+    }
+    #hero p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero {
+        padding: 50px 15px;
+        min-height: 180px;
+    }
+    #hero h2 {
+        font-size: 1.8rem;
+    }
+    #hero p {
+        font-size: 0.9rem;
+    }
+}
 /* About Section */
 #about p {
     font-size: 1.1rem;
