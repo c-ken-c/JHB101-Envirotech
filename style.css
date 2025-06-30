@@ -1,23 +1,37 @@
 /* General Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Microsoft JhengHei", "Heiti TC", Arial, sans-serif; /* 優先使用繁體中文常用字體 */
     margin: 0;
-    line-height: 1.6;
+    line-height: 1.7; /* 增加行高，提升閱讀性 */
     color: #333;
     background-color: #f4f4f4;
 }
 
 .container {
-    width: 80%;
+    width: 85%; /* 稍微增加容器寬度，讓內容更寬敞 */
+    max-width: 1200px; /* 設定最大寬度 */
     margin: auto;
     overflow: hidden;
     padding: 20px 0;
-    text-align: center; /* 文字水平置中 */
-    font-family: "Microsoft JhengHei", "Heiti TC", sans-serif;
+    text-align: center;
 }
 
 h1, h2, h3, h4 {
     color: #333;
+    margin-bottom: 15px; /* 增加標題下方的間距 */
+}
+
+h2 {
+    font-size: 2.8rem; /* 調整 H2 字體大小 */
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 2.2rem; /* 調整 H3 字體大小 */
+}
+
+p {
+    margin-bottom: 15px; /* 調整段落下方的間距 */
 }
 
 a {
@@ -33,127 +47,112 @@ a:hover {
     display: inline-block;
     color: #fff;
     background: #007bff;
-    padding: 10px 20px;
+    padding: 12px 25px; /* 調整按鈕大小 */
     border-radius: 5px;
-    margin-top: 20px;
+    margin-top: 25px; /* 增加按鈕上方間距 */
+    transition: background 0.3s ease; /* 添加過渡效果 */
+    font-weight: bold;
 }
 
 .btn:hover {
-    background: #f0e68c;
+    background: #0056b3; /* 懸停時顏色變深 */
     color: #fff;
     text-decoration: none;
 }
 
 /* Navbar */
 .navbar {
-    background: #f0e68c;
+    background: #f0e68c; /* 黃色背景 */
     color: #fff;
-    padding: 0.25rem 0;
+    padding: 0.5rem 0; /* 調整導航列的垂直內距 */
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 添加陰影效果 */
 }
 
-@media (max-width: 768px) {
-    .navbar {
-        padding: 0.1rem 0;
-    }
+.navbar .container {
+    display: flex; /* 使用 Flexbox 讓 Logo 和導航連結左右分佈 */
+    justify-content: space-between; /* 內容左右分開 */
+    align-items: center; /* 垂直置中對齊 */
+    padding: 0 20px; /* 左右內距 */
+}
+
+.navbar .logo {
+    color: #007bff !important; /* 確保 Logo 顏色 */
+    font-size: 2rem !important; /* 調整 Logo 字體大小 */
+    font-weight: bold;
+    text-decoration: none !important;
+    padding-top: 0 !important; /* 移除多餘 padding */
 }
 
 .navbar .nav-links {
     list-style: none;
-    float: right;
     margin: 0;
     padding: 0;
+    display: flex; /* 讓連結橫向排列 */
 }
 
 .navbar .nav-links li {
-    display: inline;
-    margin-left: 20px;
+    margin-left: 30px; /* 增加連結間距 */
 }
 
 .navbar .nav-links a {
     color: #fff;
     font-weight: bold;
+    padding: 10px 0; /* 調整連結的點擊區域 */
     transition: all 0.3s ease;
+    font-size: 1.1rem; /* 調整導航連結字體大小 */
 }
 
 .navbar .nav-links a:hover {
-    color: #007bff;
+    color: #0056b3; /* 懸停時變色 */
     text-decoration: none;
 }
 
 /* Hero Section */
 .hero {
     display: flex;
-    align-items: center; /* 垂直置中 */
-    justify-content: center; /* 水平置中 */
-    flex-direction: column; /* 讓內容垂直排列 */
-    text-align: center; /* 確保內部文字置中 */
-    padding: 100px 20px; /* 增加左右 padding 以免內容貼邊 */
-    min-height: 400px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 120px 20px; /* 調整上下內距，使其更顯大氣 */
+    min-height: 450px; /* 調整最小高度 */
     background: url('你的背景圖片路徑') no-repeat center center / cover;
-    box-sizing: border-box; /* 確保 padding 不會增加總寬度 */
+    box-sizing: border-box;
 }
 
 .hero .container {
-    width: 100%; /* 在 hero 區塊內，container 寬度設為 100% 以更好地控制文字置中 */
-    max-width: 1200px; /* 設置最大寬度，避免在超大螢幕上過寬 */
-    margin: 0 auto; /* 確保 container 本身也置中 */
+    width: 100%;
+    max-width: 900px; /* 調整 Hero 內容的最大寬度，使其更集中 */
+    margin: 0 auto;
+    padding: 0; /* 移除 Hero 容器的額外 padding */
 }
 
 .hero h2 {
-    font-size: 3.5rem;
-    margin-bottom: 10px;
+    font-size: 4rem; /* 調整 Hero 標題字體大小 */
+    margin-bottom: 15px;
     color: #fff;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    word-break: break-word; /* 防止長單詞溢出 */
+    text-shadow: 0 3px 6px rgba(0,0,0,0.6); /* 增強陰影 */
+    word-break: break-word;
+    line-height: 1.2; /* 調整行高 */
 }
 
 .hero p {
     color: #fff;
     margin-top: 0;
-    max-width: 800px; /* 限制段落最大寬度，避免過長 */
+    max-width: 700px;
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    font-size: 1.5rem;
-    word-break: break-word; /* 防止長單詞溢出 */
-}
-
-@media (max-width: 768px) {
-    .hero {
-        padding: 30px 15px; /* **手機版調整 padding，進一步減少上方空間** */
-    }
-
-    .hero h2 {
-        font-size: 2.2rem; /* 手機版字體縮小 */
-    }
-
-    .hero p {
-        font-size: 1.1rem; /* 手機版字體縮小 */
-    }
-
-    .hero .container {
-        width: 95%; /* 手機版 container 寬度調整 */
-    }
-
-    .navbar .nav-links li {
-        display: block;
-        margin: 5px 0; /* **減少導航列項目在手機版上的垂直間距** */
-    }
-
-    .section {
-        padding: 20px 0; /* **減少區塊在手機版上的上下內距** */
-    }
-
-    .container {
-        width: 90%;
-    }
+    font-size: 1.7rem; /* 調整 Hero 段落字體大小 */
+    word-break: break-word;
+    line-height: 1.5; /* 調整行高 */
 }
 
 /* Sections */
 .section {
-    padding: 60px 0; /* 桌面版維持不變 */
-    border-bottom: 1px solid #ddd;
+    padding: 80px 0; /* 增加區塊的上下內距，營造更寬敞的感覺 */
+    border-bottom: 1px solid #eee; /* 更淺的邊框顏色 */
     text-align: center;
 }
 
@@ -162,10 +161,10 @@ a:hover {
 }
 
 .section h3 {
-    font-size: 2.5rem;
+    font-size: 2.8rem; /* 調整區塊標題字體大小 */
     margin-bottom: 30px;
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 15px; /* 增加下劃線與文字的間距 */
 }
 
 .section h3::after {
@@ -174,8 +173,8 @@ a:hover {
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
+    width: 80px; /* 增加下劃線長度 */
+    height: 4px; /* 增加下劃線粗細 */
     background: #007bff;
 }
 
@@ -183,63 +182,78 @@ a:hover {
     background-color: #f9f9f9;
 }
 
-/* Service Grid */
+/* Service Grid, Solution Grid, Product Grid */
 .service-grid, .solution-grid, .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    gap: 40px; /* 增加網格項目間距 */
+    margin-top: 50px;
 }
 
 .service-item, .solution-item, .product-item {
     background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 35px; /* 調整項目內距 */
+    border-radius: 10px; /* 稍微增加圓角 */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15); /* 增強陰影 */
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-item:hover, .solution-item:hover, .product-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px); /* 增加懸停抬升效果 */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 .service-item h4, .solution-item h4, .product-item h4 {
-    font-size: 1.8rem;
+    font-size: 2rem; /* 調整項目標題字體大小 */
     margin-top: 0;
     color: #007bff;
+    margin-bottom: 10px;
+}
+.service-item p, .solution-item p, .product-item p {
+    font-size: 1.1rem; /* 調整項目段落字體大小 */
+    line-height: 1.6;
 }
 
 .learn-more {
     display: inline-block;
-    margin-top: 15px;
+    margin-top: 20px;
     font-weight: bold;
+    color: #007bff; /* 確保顏色 */
+}
+.learn-more:hover {
+    text-decoration: underline;
 }
 
 /* Contact Info */
 .contact-info {
     list-style: none;
     padding: 0;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .contact-info li {
-    margin-bottom: 10px;
-    font-size: 1.1rem;
+    margin-bottom: 15px; /* 調整聯絡資訊項目間距 */
+    font-size: 1.2rem; /* 調整字體大小 */
+    display: flex; /* 使用 flexbox 讓圖標和文字對齊 */
+    align-items: center;
+    justify-content: center;
 }
 
 .contact-info li i {
-    margin-right: 10px;
+    margin-right: 15px; /* 調整圖標與文字間距 */
     color: #007bff;
+    font-size: 1.3rem;
 }
 
 .social-links {
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .social-links a {
-    margin: 0 10px;
-    color: #333;
+    margin: 0 15px; /* 調整社交連結圖標間距 */
+    color: #555; /* 調整顏色 */
+    font-size: 1.8rem; /* 調整社交圖標大小 */
     transition: color 0.3s ease;
 }
 
@@ -248,36 +262,41 @@ a:hover {
 }
 
 .language-options {
-    margin-top: 20px;
-    font-size: 0.9rem;
+    margin-top: 30px;
+    font-size: 1rem;
 }
 
 .language-options a {
-    margin: 0 5px;
+    margin: 0 8px;
+    color: #555;
 }
+.language-options a:hover {
+    color: #007bff;
+}
+
 
 /* Footer */
 .footer {
     background: #222;
     color: #fff;
     text-align: center;
-    padding: 20px 0; /* **減少頁腳在桌面版和手機版上的上下內距** */
+    padding: 40px 0; /* 調整頁腳的上下內距 */
 }
 
 .footer .footer-sitemap {
     list-style: none;
     padding: 0;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .footer .footer-sitemap li {
     display: inline;
-    margin: 0 10px;
+    margin: 0 15px; /* 調整頁腳連結間距 */
 }
 
 .footer .footer-sitemap a {
     color: #ccc;
-    font-size: 0.9rem;
+    font-size: 1rem; /* 調整字體大小 */
 }
 
 .footer .footer-sitemap a:hover {
@@ -285,4 +304,143 @@ a:hover {
 }
 
 /* Responsive Design */
-/* 這裡的媒體查詢已在上方合併和調整 */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* 手機版容器寬度 */
+        padding: 15px 0;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    /* Navbar */
+    .navbar .container {
+        flex-direction: column; /* 手機版導航列垂直排列 */
+        padding: 10px 15px;
+    }
+
+    .navbar .logo {
+        margin-bottom: 10px;
+        float: none; /* 確保置中 */
+        font-size: 1.8rem !important;
+    }
+
+    .navbar .nav-links {
+        flex-direction: column; /* 連結垂直排列 */
+        width: 100%; /* 佔滿寬度 */
+        align-items: center; /* 連結置中 */
+    }
+
+    .navbar .nav-links li {
+        margin: 5px 0; /* 調整垂直間距 */
+    }
+
+    .navbar .nav-links a {
+        font-size: 1rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 60px 15px; /* 手機版 Hero 區塊的上下內距 */
+        min-height: 350px;
+    }
+
+    .hero h2 {
+        font-size: 2.8rem;
+        line-height: 1.3;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        line-height: 1.4;
+    }
+
+    /* Sections */
+    .section {
+        padding: 40px 0; /* 手機版區塊的上下內距 */
+    }
+
+    .section h3 {
+        font-size: 2.2rem;
+        padding-bottom: 10px;
+    }
+
+    .section h3::after {
+        width: 60px;
+        height: 3px;
+    }
+
+    /* Grid Layouts */
+    .service-grid, .solution-grid, .product-grid {
+        grid-template-columns: 1fr; /* 手機版改為單欄 */
+        gap: 30px;
+    }
+
+    .service-item, .solution-item, .product-item {
+        padding: 25px;
+    }
+
+    .service-item h4, .solution-item h4, .product-item h4 {
+        font-size: 1.6rem;
+    }
+    .service-item p, .solution-item p, .product-item p {
+        font-size: 1rem;
+    }
+
+
+    /* Contact Info */
+    .contact-info li {
+        font-size: 1rem;
+        margin-bottom: 10px;
+        flex-direction: column; /* 手機版垂直排列 */
+        align-items: center;
+        text-align: center;
+    }
+    .contact-info li i {
+        margin-right: 0;
+        margin-bottom: 5px; /* 圖標下方間距 */
+    }
+
+    .social-links {
+        margin-top: 30px;
+    }
+    .social-links a {
+        font-size: 1.5rem;
+    }
+
+    .footer {
+        padding: 30px 0; /* 手機版頁腳內距 */
+    }
+
+    .footer .footer-sitemap li {
+        display: block; /* 手機版頁腳連結垂直排列 */
+        margin: 8px 0;
+    }
+}
+
+/* Larger screens specific adjustments */
+@media (min-width: 1201px) {
+    .container {
+        width: 75%; /* 超大螢幕上可以稍微縮小內容寬度，避免過寬 */
+    }
+    .hero h2 {
+        font-size: 4.5rem;
+    }
+    .hero p {
+        font-size: 1.8rem;
+    }
+}
