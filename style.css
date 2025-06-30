@@ -448,9 +448,9 @@ footer {
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-.agency-item h3 {
+.agency-item h4 { /* 將 h3 替換為 h4 */
     text-align: left; /* 標題靠左 */
-    font-size: 1.5rem; /* 標題字體大小 */
+    font-size: 1.3rem; /* 標題字體大小，比之前 h3 的 1.5rem 縮小 */
     color: var(--primary-color); /* 保留原有顏色 */
     margin-top: 0;
     margin-bottom: 20px;
@@ -466,11 +466,32 @@ footer {
 }
 
 .agency-content img {
-    max-width: 150px; /* 限制圖片最大寬度 */
+    max-width: 112.5px; /* 150px 的 75% */
     height: auto;
     border-radius: 5px;
-    flex-shrink: 0; /* 防止圖片縮小 */
+    flex-shrink: 0;
     border: 1px solid #eee;
+}
+
+/* responsive adjustment in style.css */
+@media (max-width: 768px) {
+    /* ... (其他現有內容保持不變) ... */
+    .agency-item h4 { /* 調整 h4 在小螢幕下的樣式 */
+        text-align: center; /* 小螢幕下標題置中 */
+        display: block; /* 讓底線與區塊同寬 */
+    }
+    /* ... (其他現有內容保持不變) ... */
+}
+
+@media (max-width: 480px) {
+    /* ... (其他現有內容保持不變) ... */
+    .agency-item h4 { /* 調整 h4 在更小螢幕下的樣式 */
+        font-size: 1.2rem; /* 在小螢幕下字體再縮小一點 */
+    }
+    .agency-content img {
+        max-width: 75px; /* 在更小螢幕下圖片再縮小一點 */
+    }
+    /* ... (其他現有內容保持不變) ... */
 }
 
 .agency-content p {
