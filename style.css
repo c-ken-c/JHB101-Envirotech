@@ -86,31 +86,28 @@ a:hover {
 
 /* Hero Section */
 .hero {
-    background: url('https://via.placeholder.com/1500x500/007bff/ffffff?text=Environment+Solution') no-repeat center center / cover;
-    color: #f0f0f0; /* 改成淺灰，對比更佳 */
-    text-align: center;
-    padding: 100px 0;
-    min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center; /* 水平置中 */
+}
 
-    /* 確保垂直水平置中 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.hero h2,
+.hero p {
+  color: #f0f0f0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .hero h2 {
-    font-size: 3.5rem;
-    margin-bottom: 10px;
-    color: #f0f0f0; /* 改成淺灰，確保對比 */
+  margin-bottom: 10px;
 }
 
 .hero p {
-    font-size: 1.5rem;
-    margin-top: 0;
-    max-width: 800px;
-    color: #f0f0f0; /* 改成淺灰，確保對比 */
+  margin: 0.5em 0;
+  max-width: 800px;
 }
+
 
 @media (max-width: 768px) {
     .hero h2 {
