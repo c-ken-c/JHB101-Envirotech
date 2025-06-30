@@ -85,27 +85,20 @@ a:hover {
 }
 
 /* Hero Section */
+/* Hero Section */
 .hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center; /* 水平置中 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center; /* 水平置中 - 此設定已存在 */
+    /* 如果背景圖片過於明亮，導致文字仍難以閱讀，您可能需要調整背景圖片或在圖片上疊加一層半透明的深色遮罩。 */
 }
 
 .hero h2,
 .hero p {
-  color: #f0f0f0;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-}
-
-.hero h2 {
-  margin-bottom: 10px;
-}
-
-.hero p {
-  margin: 0.5em 0;
-  max-width: 800px;
+    **color: #333; /* 修正：將文字顏色改為深灰色，以提高可見度與對比度 */**
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* 陰影可以保留以增加立體感 */
 }
 
 
