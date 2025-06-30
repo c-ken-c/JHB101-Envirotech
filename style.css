@@ -434,3 +434,83 @@ footer {
         padding-bottom: 0;
     }
 }
+/* About Section - Agency List Specific Styles */
+.agency-list {
+    margin-top: 30px;
+}
+
+.agency-item {
+    margin-bottom: 40px;
+    background-color: #fcfcfc;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.agency-item h3 {
+    text-align: left; /* 標題靠左 */
+    font-size: 1.5rem; /* 標題字體大小 */
+    color: var(--primary-color); /* 保留原有顏色 */
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    display: inline-block; /* 讓底線只在文字下方 */
+}
+
+.agency-content {
+    display: flex;
+    align-items: flex-start; /* 圖片和文字頂部對齊 */
+    gap: 20px; /* 圖片和文字之間的間距 */
+}
+
+.agency-content img {
+    max-width: 150px; /* 限制圖片最大寬度 */
+    height: auto;
+    border-radius: 5px;
+    flex-shrink: 0; /* 防止圖片縮小 */
+    border: 1px solid #eee;
+}
+
+.agency-content p {
+    font-size: 1rem; /* 內文大小與上下文一致 */
+    line-height: 1.7;
+    text-align: justify; /* 內文左右對齊 */
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Responsive adjustment for Agency List */
+@media (max-width: 768px) {
+    .agency-content {
+        flex-direction: column; /* 小螢幕下圖片和文字堆疊 */
+        align-items: center; /* 堆疊後置中 */
+        text-align: center;
+    }
+    .agency-content img {
+        margin-bottom: 15px;
+    }
+    .agency-item h3 {
+        text-align: center; /* 小螢幕下標題置中 */
+        display: block; /* 讓底線與區塊同寬 */
+    }
+    .agency-content p {
+        text-align: left; /* 確保小螢幕下內文仍然靠左對齊 */
+    }
+}
+
+@media (max-width: 480px) {
+    .agency-item {
+        padding: 15px;
+    }
+    .agency-item h3 {
+        font-size: 1.3rem;
+    }
+    .agency-content img {
+        max-width: 100px;
+    }
+    .agency-content p {
+        font-size: 0.9rem;
+    }
+}
