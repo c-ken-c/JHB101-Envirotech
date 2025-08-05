@@ -119,7 +119,8 @@ nav ul li a {
     border-bottom: 2px solid transparent;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active-nav-link { /* Style for active link on catalog page */
     color: var(--primary-color);
     border-bottom: 2px solid var(--primary-color);
 }
@@ -171,32 +172,6 @@ nav ul li a:hover {
     margin: 0 auto;
 }
 
-/* Responsive adjustment for Hero Section */
-@media (max-width: 768px) {
-    #hero {
-        padding: 60px 20px;
-        min-height: 220px;
-    }
-    #hero h2 {
-        font-size: 2.2rem;
-    }
-    #hero p {
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    #hero {
-        padding: 50px 15px;
-        min-height: 180px;
-    }
-    #hero h2 {
-        font-size: 1.8rem;
-    }
-    #hero p {
-        font-size: 0.9rem;
-    }
-}
 /* About Section */
 #about p {
     font-size: 1.1rem;
@@ -235,19 +210,14 @@ nav ul li a:hover {
     box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
-.product-image-placeholder {
+.product-item img {
     width: 100%;
-    height: 180px;
-    background-color: var(--light-grey);
+    max-height: 180px;
+    object-fit: contain;
     border-radius: 4px;
     margin-bottom: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #666;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border: 1px dashed #ccc;
+    display: block;
+    border: 1px solid var(--border-color);
 }
 
 .product-item h3 {
@@ -304,18 +274,108 @@ nav ul li a:hover {
 }
 
 /* Contact Section */
-.contact-info {
+.contact-footer {
+    background: linear-gradient(to right, #ffdd57, #ffc300);
+    color: #333;
+    padding: 60px 0;
     text-align: center;
-    font-size: 1.1rem;
-    line-height: 1.8;
 }
 
-.contact-info p {
+.contact-footer h2 {
+    display: none;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.contact-column {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: left;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.contact-column h3 {
+    color: var(--heading-color);
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+.contact-column p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
     margin-bottom: 10px;
 }
 
-.contact-info a {
-    font-weight: bold;
+.contact-column a {
+    color: var(--primary-color);
+    font-weight: normal;
+    transition: color 0.3s ease;
+}
+
+.contact-column a:hover {
+    color: #003f80;
+    text-decoration: underline;
+}
+
+/* Agency List Styles */
+.agency-list {
+    margin-top: 30px;
+}
+
+.agency-item {
+    margin-bottom: 40px;
+    background-color: #fcfcfc;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.agency-item h4 {
+    text-align: left;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.agency-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.agency-content img {
+    max-width: 112.5px;
+    height: auto;
+    border-radius: 5px;
+    flex-shrink: 0;
+    border: 1px solid #eee;
+}
+
+.agency-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: justify;
+    margin: 0;
+    color: var(--text-color);
 }
 
 /* Footer */
@@ -327,7 +387,206 @@ footer {
     font-size: 0.9rem;
 }
 
+
+/* --- NEW STYLES FOR CATALOG & DETAIL PAGES --- */
+
+#catalog-hero {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+#catalog-hero h2 {
+    color: white;
+}
+
+#catalog-hero h2::after {
+    background-color: white;
+}
+
+#catalog-hero p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.catalog-container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.catalog-nav {
+    flex: 0 0 250px; /* Sidebar width */
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    position: sticky;
+    top: 100px; /* Adjust based on header height */
+}
+
+.catalog-nav h3 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.catalog-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.catalog-nav ul li a {
+    display: block;
+    padding: 12px 15px;
+    color: var(--text-color);
+    font-weight: 500;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.catalog-nav ul li a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.catalog-nav ul li a.active {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: bold;
+}
+
+.product-display {
+    flex: 1;
+}
+
+.product-table {
+    display: none; /* Hidden by default */
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    padding: 30px;
+}
+
+.product-table.active {
+    display: block; /* Show active table */
+}
+
+.product-table h3 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.product-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.product-table th, .product-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.product-table thead th {
+    background-color: var(--secondary-color);
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--heading-color);
+}
+
+.product-table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.details-link {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.details-link:hover {
+    background-color: #218838;
+    color: #fff;
+}
+
+.product-detail-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.product-detail-image {
+    flex: 1;
+}
+
+.product-detail-image img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.product-detail-info {
+    flex: 1.5;
+}
+
+.product-detail-info h3 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.product-detail-info p, .product-detail-info ul {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.product-detail-info ul {
+    list-style-position: inside;
+    padding-left: 10px;
+}
+
+.back-link {
+    display: inline-block;
+    background-color: var(--heading-color);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.back-link:hover {
+    background-color: #4a627a;
+    color: #fff;
+}
+
+
 /* Responsive Design */
+@media (max-width: 992px) {
+    .catalog-container {
+        flex-direction: column;
+    }
+    .catalog-nav {
+        width: 100%;
+        position: static;
+        margin-bottom: 30px;
+    }
+}
+
 @media (max-width: 768px) {
     header .container {
         flex-direction: column;
@@ -347,232 +606,22 @@ footer {
         margin: 10px 0;
     }
 
-    #hero h2 {
-        font-size: 2.5rem;
-    }
-
-    #hero p {
-        font-size: 1.2rem;
-    }
-
-    h2 {
-        font-size: 2rem;
-    }
-
-    .section-padding {
-        padding: 50px 0;
-    }
-
-    .product-grid, .tech-grid {
-        grid-template-columns: 1fr;
-    }
+    #hero h2 { font-size: 2.5rem; }
+    #hero p { font-size: 1.2rem; }
+    h2 { font-size: 2rem; }
+    .section-padding { padding: 50px 0; }
+    .product-grid, .tech-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .contact-column { text-align: center; }
+    .agency-content { flex-direction: column; align-items: center; text-align: center; }
+    .agency-content img { margin-bottom: 15px; }
+    .product-detail-layout { flex-direction: column; }
 }
 
 @media (max-width: 480px) {
-    .logo h1 {
-        font-size: 1.5rem;
-    }
-
-    #hero h2 {
-        font-size: 2rem;
-    }
-
-    #hero p {
-        font-size: 1rem;
-    }
-
-    h2 {
-        font-size: 1.8rem;
-    }
-}
-/* New Contact Section (Contact Footer Style) */
-.contact-footer {
-    background: linear-gradient(to right, #ffdd57, #ffc300); /* 黃色漸層背景 */
-    color: #333; /* 文字顏色，確保在黃色背景上清晰可見 */
-    padding: 60px 0; /* 調整內邊距 */
-    text-align: center;
-}
-
-.contact-footer h2 { /* 移除 Contact 區塊標題的底線和置中 */
-    display: none; /* 隱藏原有的 H2 標題，因為新的設計中不需要 */
-}
-
-.contact-footer .container {
-    padding: 0 20px;
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 自動調整為三欄或更少 */
-    gap: 30px; /* 欄位間距 */
-    align-items: flex-start; /* 確保內容從頂部對齊 */
-}
-
-.contact-column {
-    background-color: rgba(255, 255, 255, 0.9); /* 輕微透明的白色背景 */
-    border-radius: 8px;
-    padding: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    text-align: left; /* 內容左對齊 */
-    height: 100%; /* 確保高度一致 */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.contact-column h3 {
-    color: var(--heading-color); /* 深色標題 */
-    font-size: 1.6rem; /* 標題字體大小 */
-    margin-top: 0;
-    margin-bottom: 15px;
-    border-bottom: 2px solid var(--primary-color); /* 底部強調線 */
-    padding-bottom: 10px;
-}
-
-.contact-column p {
-    font-size: 1.1rem; /* 內文字體大小 */
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.contact-column a {
-    color: var(--primary-color); /* 連結顏色 */
-    font-weight: normal; /* 連結不加粗 */
-    transition: color 0.3s ease;
-}
-
-.contact-column a:hover {
-    color: #003f80;
-    text-decoration: underline;
-}
-
-/* Responsive adjustment for Contact Section */
-@media (max-width: 768px) {
-    .contact-grid {
-        grid-template-columns: 1fr; /* 小螢幕下變為單欄 */
-    }
-    .contact-column {
-        text-align: center; /* 單欄時內容置中 */
-    }
-    .contact-column h3 {
-        border-bottom: none; /* 單欄時移除標題底線 */
-        padding-bottom: 0;
-    }
-}
-/* About Section - Agency List Specific Styles */
-.agency-list {
-    margin-top: 30px;
-}
-
-.agency-item {
-    margin-bottom: 40px;
-    background-color: #fcfcfc;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 25px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-}
-
-.agency-item h4 { /* 將 h3 替換為 h4 */
-    text-align: left; /* 標題靠左 */
-    font-size: 1.3rem; /* 標題字體大小，比之前 h3 的 1.5rem 縮小 */
-    color: var(--primary-color); /* 保留原有顏色 */
-    margin-top: 0;
-    margin-bottom: 20px;
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 10px;
-    display: inline-block; /* 讓底線只在文字下方 */
-}
-
-.agency-content {
-    display: flex;
-    align-items: flex-start; /* 圖片和文字頂部對齊 */
-    gap: 20px; /* 圖片和文字之間的間距 */
-}
-
-.agency-content img {
-    max-width: 112.5px; /* 150px 的 75% */
-    height: auto;
-    border-radius: 5px;
-    flex-shrink: 0;
-    border: 1px solid #eee;
-}
-
-/* responsive adjustment in style.css */
-@media (max-width: 768px) {
-    /* ... (其他現有內容保持不變) ... */
-    .agency-item h4 { /* 調整 h4 在小螢幕下的樣式 */
-        text-align: center; /* 小螢幕下標題置中 */
-        display: block; /* 讓底線與區塊同寬 */
-    }
-    /* ... (其他現有內容保持不變) ... */
-}
-
-@media (max-width: 480px) {
-    /* ... (其他現有內容保持不變) ... */
-    .agency-item h4 { /* 調整 h4 在更小螢幕下的樣式 */
-        font-size: 1.2rem; /* 在小螢幕下字體再縮小一點 */
-    }
-    .agency-content img {
-        max-width: 75px; /* 在更小螢幕下圖片再縮小一點 */
-    }
-    /* ... (其他現有內容保持不變) ... */
-}
-
-.agency-content p {
-    font-size: 1rem; /* 內文大小與上下文一致 */
-    line-height: 1.7;
-    text-align: justify; /* 內文左右對齊 */
-    margin: 0;
-    color: var(--text-color);
-}
-
-/* Responsive adjustment for Agency List */
-@media (max-width: 768px) {
-    .agency-content {
-        flex-direction: column; /* 小螢幕下圖片和文字堆疊 */
-        align-items: center; /* 堆疊後置中 */
-        text-align: center;
-    }
-    .agency-content img {
-        margin-bottom: 15px;
-    }
-    .agency-item h3 {
-        text-align: center; /* 小螢幕下標題置中 */
-        display: block; /* 讓底線與區塊同寬 */
-    }
-    .agency-content p {
-        text-align: left; /* 確保小螢幕下內文仍然靠左對齊 */
-    }
-}
-
-@media (max-width: 480px) {
-    .agency-item {
-        padding: 15px;
-    }
-    .agency-item h3 {
-        font-size: 1.3rem;
-    }
-    .agency-content img {
-        max-width: 100px;
-    }
-    .agency-content p {
-        font-size: 0.9rem;
-    }
-}
-/* Product Images Styling */
-.product-item img {
-    width: 100%; /* 讓圖片佔滿產品項目的寬度 */
-    max-height: 180px; /* 限制最大高度，可調整 */
-    object-fit: contain; /* 確保圖片完整顯示，不會被裁切 */
-    border-radius: 4px;
-    margin-bottom: 15px;
-    display: block; /* 讓圖片獨立佔據一行 */
-    border: 1px solid var(--border-color); /* 添加邊框 */
-}
-
-/* 移除原有的產品圖片佔位符樣式，因為將被圖片取代 */
-.product-image-placeholder {
-    display: none; /* 隱藏佔位符 */
+    .logo h1 { font-size: 1.5rem; }
+    #hero h2 { font-size: 2rem; }
+    #hero p { font-size: 1rem; }
+    h2 { font-size: 1.8rem; }
+    .agency-content p { font-size: 0.9rem; }
 }
