@@ -3,645 +3,315 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>產品目錄 - Product Catalog</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', 'Microsoft JhengHei', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-            color: white;
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .main-content {
-            display: flex;
-            gap: 20px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            overflow: hidden;
-            min-height: 80vh;
-        }
-
-        .sidebar {
-            flex: 0 0 300px;
-            background: linear-gradient(180deg, #4a90e2 0%, #357abd 100%);
-            padding: 20px;
-        }
-
-        .sidebar h2 {
-            color: white;
-            margin-bottom: 20px;
-            font-size: 1.3rem;
-            text-align: center;
-            padding-bottom: 10px;
-            border-bottom: 2px solid rgba(255,255,255,0.3);
-        }
-
-        .category-list {
-            list-style: none;
-        }
-
-        .category-item {
-            margin-bottom: 10px;
-        }
-
-        .category-btn {
-            width: 100%;
-            padding: 15px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            text-align: left;
-            border: 2px solid transparent;
-        }
-
-        .category-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateX(5px);
-        }
-
-        .category-btn.active {
-            background: rgba(255, 255, 255, 0.3);
-            border-color: white;
-            font-weight: bold;
-        }
-
-        .content-area {
-            flex: 1;
-            padding: 30px;
-            overflow-y: auto;
-        }
-
-        .category-content {
-            display: none;
-        }
-
-        .category-content.active {
-            display: block;
-        }
-
-        .category-title {
-            color: #357abd;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #4a90e2;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-            border-color: #4a90e2;
-        }
-
-        .product-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-size: 1.1rem;
-            position: relative;
-        }
-
-        .product-image::before {
-            content: "📷";
-            font-size: 3rem;
-            opacity: 0.5;
-        }
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .product-model {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #357abd;
-            margin-bottom: 10px;
-        }
-
-        .product-overview {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 15px;
-            background: #f8f9fa;
-            padding: 10px;
-            border-radius: 6px;
-            border-left: 4px solid #4a90e2;
-        }
-
-        .product-details {
-            text-align: right;
-        }
-
-        .details-link {
-            display: inline-block;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #4a90e2, #357abd);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
-        }
-
-        .details-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
-            background: linear-gradient(135deg, #357abd, #2a5a8a);
-        }
-
-        @media (max-width: 768px) {
-            .main-content {
-                flex-direction: column;
-            }
-            
-            .sidebar {
-                flex: none;
-            }
-            
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .header h1 {
-                font-size: 2rem;
-            }
-        }
-
-        .fade-in {
-            animation: fadeIn 0.5s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+    <title>設備型錄 - 承信環境科技股份有限公司</title>
+    <meta name="description" content="探索承信環境科技的專業水處理設備型錄，包含Memstar與Thetis的UF、MBR產品，以及Nature Works高性能濾料。">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="image/Envirotech Logo.png" type="image/png">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>產品目錄</h1>
-            <p>高品質過濾設備解決方案</p>
-        </div>
-
-        <div class="main-content">
-            <div class="sidebar">
-                <h2>產品類別</h2>
-                <ul class="category-list">
-                    <li class="category-item">
-                        <button class="category-btn active" data-category="memstar-uf">Memstar UF</button>
-                    </li>
-                    <li class="category-item">
-                        <button class="category-btn" data-category="memstar-mbr">Memstar MBR</button>
-                    </li>
-                    <li class="category-item">
-                        <button class="category-btn" data-category="thetis-uf">Thetis UF</button>
-                    </li>
-                    <li class="category-item">
-                        <button class="category-btn" data-category="thetis-mbr">Thetis MBR</button>
-                    </li>
-                    <li class="category-item">
-                        <button class="category-btn" data-category="thetis-separator">Thetis 超高濃度固液分離過濾器</button>
-                    </li>
-                    <li class="category-item">
-                        <button class="category-btn" data-category="nature-works">Nature Works 高性能濾料</button>
-                    </li>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="image/Envirotech Logo.png" alt="承信環境科技股份有限公司 Logo">
+                <h1>承信環境科技股份有限公司</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#about">公司介紹</a></li>
+                    <li><a href="index.html#products">產品介紹</a></li>
+                    <li><a href="catalog.html" class="active-nav-link">設備型錄</a></li>
+                    <li><a href="index.html#technology">技術資料</a></li>
+                    <li><a href="index.html#contact">聯絡我們</a></li>
                 </ul>
-            </div>
-
-            <div class="content-area">
-                <!-- Memstar UF -->
-                <div id="memstar-uf" class="category-content active">
-                    <h2 class="category-title">Memstar UF 超濾膜產品</h2>
-                    <div class="products-grid">
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">UF-0610E / UF-0610ET</div>
-                                <div class="product-overview">100%PVDF、25m²、0.04µm</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">UF-0615E / UF-0615ET</div>
-                                <div class="product-overview">100%PVDF、40m²、0.04µm</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">UF-0615ED / UF-0615EDT</div>
-                                <div class="product-overview">100%PVDF、40m²、0.04µm</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">UF-0620E / UF-0620ET</div>
-                                <div class="product-overview">100%PVDF、50m²、0.04µm</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">UF-0620ED / UF-0620EDT</div>
-                                <div class="product-overview">100%PVDF、50m²、0.04µm</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">UF-1010E / UF-1010ET</div>
-                                <div class="product-overview">100%PVDF、55m²、0.04µm</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">UF-1015E / UF-1015ET</div>
-                                <div class="product-overview">100%PVDF、80m²、0.04µm</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">UF-1020E / UF-1020ET</div>
-                                <div class="product-overview">100%PVDF、120m²、0.04µm</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">UF-0717E / UF-0717ET</div>
-                                <div class="product-overview">100%PVDF、56m²、0.04µm</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">UF-0915E / UF-0915ET</div>
-                                <div class="product-overview">100%PVDF、51m²、0.04µm</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">UF-0915E-IP / UF-0915ET-IP</div>
-                                <div class="product-overview">100%PVDF、51m²、0.04µm</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">UF-0920E / UF-0920ET</div>
-                                <div class="product-overview">100%PVDF、77m²、0.04µm</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">UF-0920E-IP / UF-0920ET-IP</div>
-                                <div class="product-overview">100%PVDF、77m²、0.04µm</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Memstar MBR -->
-                <div id="memstar-mbr" class="category-content">
-                    <h2 class="category-title">Memstar MBR 膜生物反應器</h2>
-                    <div class="products-grid">
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">SMM-1015 / SMM-1015T</div>
-                                <div class="product-overview">100%PVDF、15m²、0.04µm</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">SMM-1522 / SMM-1522T</div>
-                                <div class="product-overview">100%PVDF、22m²、0.04µm</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">SMM-2030 / SMM-2030T</div>
-                                <div class="product-overview">100%PVDF、30m²、0.04µm</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Thetis UF -->
-                <div id="thetis-uf" class="category-content">
-                    <h2 class="category-title">Thetis UF 超濾膜系統</h2>
-                    <div class="products-grid">
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">EP 0862-X</div>
-                                <div class="product-overview">Inside-Out，PES、40m²、0.02µm</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">EP 0962</div>
-                                <div class="product-overview">Inside-Out，PES、55m²、0.02µm</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">EP 1258</div>
-                                <div class="product-overview">Inside-Out，PES、79m²、0.02µm</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">VP 0880-RW</div>
-                                <div class="product-overview">Outside-In，PVDF、77m²、0.02µm</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Thetis MBR -->
-                <div id="thetis-mbr" class="category-content">
-                    <h2 class="category-title">Thetis MBR 膜生物反應器</h2>
-                    <div class="products-grid">
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">VI 3384-HS</div>
-                                <div class="product-overview">PVDF、30m²、0.03µm、34.4m²、31.6m²</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Thetis Separator -->
-                <div id="thetis-separator" class="category-content">
-                    <h2 class="category-title">Thetis 超高濃度固液分離過濾器</h2>
-                    <div class="products-grid">
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">PermaFlux™ V10XL</div>
-                                <div class="product-overview">35.8m²、PVDF、0.04µm</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">PermaFlux™ V8</div>
-                                <div class="product-overview">11.1m²、PVDF、0.04µm</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Nature Works -->
-                <div id="nature-works" class="category-content">
-                    <h2 class="category-title">Nature Works 高性能濾料</h2>
-                    <div class="products-grid">
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">STAGE 1</div>
-                                <div class="product-overview">平均粒徑為 0.8 mm，99.64%過濾精度10~15 µm</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">STAGE 2</div>
-                                <div class="product-overview">平均粒徑為 0.7 mm，99.64%過濾精度5~10 µm</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card fade-in">
-                            <div class="product-image">產品照片位置</div>
-                            <div class="product-info">
-                                <div class="product-model">STAGE 3</div>
-                                <div class="product-overview">平均粒徑為 0.2 mm，過濾精度0.2~1 µm</div>
-                                <div class="product-details">
-                                    <a href="#" class="details-link">詳細資料</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </nav>
         </div>
-    </div>
+    </header>
+
+    <main>
+        <section id="catalog-hero" class="section-padding">
+            <div class="container">
+                <h2>設備型錄</h2>
+                <p>專業水處理設備，滿足您多樣化的應用需求</p>
+            </div>
+        </section>
+
+        <section id="catalog-main" class="section-padding section-alt-bg">
+            <div class="container catalog-container">
+                <aside class="catalog-nav">
+                    <h3>產品類別</h3>
+                    <ul>
+                        <li><a href="#" class="category-link active" data-target="memstar-uf">Memstar UF</a></li>
+                        <li><a href="#" class="category-link" data-target="memstar-mbr">Memstar MBR</a></li>
+                        <li><a href="#" class="category-link" data-target="thetis-uf">Thetis UF</a></li>
+                        <li><a href="#" class="category-link" data-target="thetis-mbr">Thetis MBR</a></li>
+                        <li><a href="#" class="category-link" data-target="thetis-filter">Thetis 超高濃度固液分離過濾器</a></li>
+                        <li><a href="#" class="category-link" data-target="nature-works">Nature Works 高性能濾料</a></li>
+                    </ul>
+                </aside>
+
+                <div class="product-display">
+                    <!-- Memstar UF -->
+                    <div id="memstar-uf" class="product-table active">
+                        <h3>Memstar UF</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>型號</th>
+                                    <th>概述</th>
+                                    <th>詳細資料</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>UF-0610E / UF-0610ET</td>
+                                    <td>100%PVDF、25m2、0.04µm</td>
+                                    <td><a href="product_details/uf-0610e.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                                <tr>
+                                    <td>UF-0615E / UF-0615ET</td>
+                                    <td>100%PVDF、40m2、0.04µm</td>
+                                    <td><a href="product_details/uf-0615e.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                                <tr>
+                                    <td>UF-0615ED / UF-0615EDT</td>
+                                    <td>100%PVDF、40m2、0.04µm</td>
+                                    <td><a href="product_details/uf-0615ed.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                                <tr>
+                                    <td>UF-0620E / UF-0620ET</td>
+                                    <td>100%PVDF、50m2、0.04µm</td>
+                                    <td><a href="product_details/uf-0620e.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                                <tr>
+                                    <td>UF-0620ED / UF-0620EDT</td>
+                                    <td>100%PVDF、50m2、0.04µm</td>
+                                    <td><a href="product_details/uf-0620ed.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                                <tr>
+                                    <td>UF-1010E / UF-1010ET</td>
+                                    <td>100%PVDF、55m2、0.04µm</td>
+                                    <td><a href="product_details/uf-1010e.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                                <tr>
+                                    <td>UF-1015E / UF-1015ET</td>
+                                    <td>100%PVDF、80m2、0.04µm</td>
+                                    <td><a href="product_details/uf-1015e.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                                <tr>
+                                    <td>UF-1020E / UF-1020ET</td>
+                                    <td>100%PVDF、120m2、0.04µm</td>
+                                    <td><a href="product_details/uf-1020e.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                                <tr>
+                                    <td>UF-0717E / UF-0717ET</td>
+                                    <td>100%PVDF、56m2、0.04µm</td>
+                                    <td><a href="product_details/uf-0717e.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                                <tr>
+                                    <td>UF-0915E / UF-0915ET</td>
+                                    <td>100%PVDF、51m2、0.04µm</td>
+                                    <td><a href="product_details/uf-0915e.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                                <tr>
+                                    <td>UF-0915E-IP / UF-0915ET-IP</td>
+                                    <td>100%PVDF、51m2、0.04µm</td>
+                                    <td><a href="product_details/uf-0915e-ip.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                                <tr>
+                                    <td>UF-0920E / UF-0920E</td>
+                                    <td>100%PVDF、77m2、0.04µm</td>
+                                    <td><a href="product_details/uf-0920e.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                                <tr>
+                                    <td>UF-0920E-IP / UF-0920ET-IP</td>
+                                    <td>100%PVDF、77m2、0.04µm</td>
+                                    <td><a href="product_details/uf-0920e-ip.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Memstar MBR -->
+                    <div id="memstar-mbr" class="product-table">
+                        <h3>Memstar MBR</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>型號</th>
+                                    <th>概述</th>
+                                    <th>詳細資料</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>SMM-1015 / SMM-1015T</td>
+                                    <td>100%PVDF、15m2、0.04µm</td>
+                                    <td><a href="product_details/smm-1015.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                                <tr>
+                                    <td>SMM-1522 / SMM-1522T</td>
+                                    <td>100%PVDF、22m2、0.04µm</td>
+                                    <td><a href="product_details/smm-1522.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                                <tr>
+                                    <td>SMM-2030 / SMM-2030T</td>
+                                    <td>100%PVDF、30m2、0.04µm</td>
+                                    <td><a href="product_details/smm-2030.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Thetis UF -->
+                    <div id="thetis-uf" class="product-table">
+                        <h3>Thetis UF</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>型號</th>
+                                    <th>概述</th>
+                                    <th>詳細資料</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>EP 0862-X</td>
+                                    <td>Inside-Out，PES、40m2、0.02µm</td>
+                                    <td><a href="product_details/ep-0862-x.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                                <tr>
+                                    <td>EP 0962</td>
+                                    <td>Inside-Out，PES、55m2、0.02µm</td>
+                                    <td><a href="product_details/ep-0962.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                                <tr>
+                                    <td>EP 1258</td>
+                                    <td>Inside-Out，PES、79m2、0.02µm</td>
+                                    <td><a href="product_details/ep-1258.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                                <tr>
+                                    <td>VP 0880-RW</td>
+                                    <td>IOutside-In，PVDF、77m2、0.02µm</td>
+                                    <td><a href="product_details/vp-0880-rw.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Thetis MBR -->
+                    <div id="thetis-mbr" class="product-table">
+                        <h3>Thetis MBR</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>型號</th>
+                                    <th>概述</th>
+                                    <th>詳細資料</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>VI 3384-HS</td>
+                                    <td>PVDF、30m2、0.03µm、34.4m2、31.6m2</td>
+                                    <td><a href="product_details/vi-3384-hs.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Thetis Filter -->
+                    <div id="thetis-filter" class="product-table">
+                        <h3>Thetis 超高濃度固液分離過濾器</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>型號</th>
+                                    <th>概述</th>
+                                    <th>詳細資料</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>PermaFlux™ V10XL</td>
+                                    <td>35.8m2、PVDF、 0.04µm</td>
+                                    <td><a href="product_details/permaflux-v10xl.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                                <tr>
+                                    <td>PermaFlux™ V8</td>
+                                    <td>11.1m2、PVDF、 0.04µm</td>
+                                    <td><a href="product_details/permaflux-v8.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Nature Works -->
+                    <div id="nature-works" class="product-table">
+                        <h3>Nature Works 高性能濾料</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>型號</th>
+                                    <th>概述</th>
+                                    <th>詳細資料</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>STAGE 1</td>
+                                    <td>平均粒徑為 0.8 mm，99.64%過濾精度10~15 µm</td>
+                                    <td><a href="product_details/stage-1.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                                <tr>
+                                    <td>STAGE 2</td>
+                                    <td>平均粒徑為 0.7 mm，99.64%過濾精度5~10 µm</td>
+                                    <td><a href="product_details/stage-2.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                                <tr>
+                                    <td>STAGE 3</td>
+                                    <td>平均粒徑為 0.2 mm，過濾精度0.2~1 µm</td>
+                                    <td><a href="product_details/stage-3.html" class="details-link">查看詳情</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 承信環境科技股份有限公司. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script>
-        // Category switching functionality
-        const categoryButtons = document.querySelectorAll('.category-btn');
-        const categoryContents = document.querySelectorAll('.category-content');
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.category-link');
+            const tables = document.querySelectorAll('.product-table');
 
-        categoryButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons and contents
-                categoryButtons.forEach(btn => btn.classList.remove('active'));
-                categoryContents.forEach(content => content.classList.remove('active'));
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
 
-                // Add active class to clicked button
-                button.classList.add('active');
+                    // Handle active link
+                    links.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
 
-                // Show corresponding content
-                const categoryId = button.getAttribute('data-category');
-                const targetContent = document.getElementById(categoryId);
-                if (targetContent) {
-                    targetContent.classList.add('active');
-                    
-                    // Add fade-in animation to product cards
-                    const productCards = targetContent.querySelectorAll('.product-card');
-                    productCards.forEach((card, index) => {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(20px)';
-                        setTimeout(() => {
-                            card.style.transition = 'all 0.5s ease';
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, index * 100);
+                    // Handle visible table
+                    const targetId = this.getAttribute('data-target');
+                    tables.forEach(table => {
+                        if (table.id === targetId) {
+                            table.classList.add('active');
+                        } else {
+                            table.classList.remove('active');
+                        }
                     });
-                }
-            });
-        });
-
-        // Add hover effects for product cards
-        document.querySelectorAll('.product-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-8px)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-            });
-        });
-
-        // Initialize first category animation
-        document.addEventListener('DOMContentLoaded', () => {
-            const firstCategoryCards = document.querySelectorAll('#memstar-uf .product-card');
-            firstCategoryCards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                setTimeout(() => {
-                    card.style.transition = 'all 0.5s ease';
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, index * 100);
+                });
             });
         });
     </script>
+
 </body>
 </html>
