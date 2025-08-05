@@ -1,10 +1,10 @@
 /* General Styles */
 :root {
-    --primary-color: #0056b3; /* 偏藍色調，可依需求調整 */
-    --secondary-color: #f8f9fa; /* 淺灰色背景 */
+    --primary-color: #0056b3; /* 核心藍色 */
+    --secondary-color: #f8f9fa; /* 頁面淺灰色背景 */
     --text-color: #333;
     --heading-color: #2c3e50;
-    --accent-color: #28a745; /* 例如用於按鈕或強調 */
+    --accent-color: #28a745; /* 強調色，如按鈕 */
     --border-color: #dee2e6;
     --light-grey: #f2f2f2;
 }
@@ -377,20 +377,17 @@ footer {
     font-size: 0.9rem;
 }
 
-/* --- NEW STYLES FOR CATALOG PAGE --- */
+/* --- UPDATED STYLES FOR CATALOG PAGE --- */
 .catalog-page-wrapper {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: var(--secondary-color); /* Use existing light grey background */
     padding: 40px 0;
 }
 
 .main-content {
     display: flex;
     gap: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    overflow: hidden;
-    min-height: 80vh;
+    background: transparent; /* Remove white background to see page background */
+    box-shadow: none; /* Remove shadow */
     max-width: 1400px;
     margin: 0 auto;
     padding: 20px;
@@ -398,22 +395,24 @@ footer {
 
 .sidebar {
     flex: 0 0 280px;
-    background: linear-gradient(180deg, #4a90e2 0%, #357abd 100%);
+    background: #ffffff; /* White background */
     padding: 20px;
     border-radius: 10px;
+    border: 2px solid var(--primary-color); /* Blue border */
 }
 
 .sidebar h2 {
-    color: white;
+    color: var(--primary-color); /* Blue text */
     margin-bottom: 20px;
-    font-size: 1.3rem;
+    font-size: 1.5rem; /* Slightly larger font */
     text-align: center;
     padding-bottom: 10px;
-    border-bottom: 2px solid rgba(255,255,255,0.3);
+    border-bottom: 2px solid var(--primary-color); /* Blue underline */
 }
 
 .category-list {
     list-style: none;
+    padding: 0; /* Remove default padding */
 }
 
 .category-item {
@@ -423,32 +422,31 @@ footer {
 .category-btn {
     width: 100%;
     padding: 15px 20px;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: none;
+    background: #f0f4f8; /* Light grey background */
+    color: var(--primary-color); /* Blue text */
+    border: 2px solid var(--primary-color); /* Blue border */
     border-radius: 8px;
     cursor: pointer;
     font-size: 1rem;
+    font-weight: bold;
     transition: all 0.3s ease;
     text-align: left;
-    border: 2px solid transparent;
 }
 
 .category-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateX(5px);
+    background: #d4e2f0; /* Darker grey on hover */
+    transform: none; /* Remove hover transform */
 }
 
 .category-btn.active {
-    background: rgba(255, 255, 255, 0.3);
-    border-color: white;
-    font-weight: bold;
+    background: var(--primary-color); /* Blue background for active */
+    color: white; /* White text for active */
+    border-color: var(--primary-color);
 }
 
 .content-area {
     flex: 1;
-    padding: 20px;
-    overflow-y: auto;
+    padding: 0; /* Remove extra padding */
 }
 
 .category-content {
@@ -460,11 +458,16 @@ footer {
 }
 
 .category-title {
-    color: #357abd;
+    color: var(--heading-color);
     font-size: 2rem;
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 3px solid #4a90e2;
+    border-bottom: 3px solid var(--primary-color);
+    text-align: left;
+}
+
+.category-title::after { /* Remove default h2 underline */
+    display: none;
 }
 
 .products-grid {
@@ -487,7 +490,7 @@ footer {
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-    border-color: #4a90e2;
+    border-color: var(--primary-color);
 }
 
 .product-image {
@@ -522,7 +525,7 @@ footer {
     background: #f8f9fa;
     padding: 10px;
     border-radius: 6px;
-    border-left: 4px solid #4a90e2;
+    border-left: 4px solid var(--primary-color);
     flex-grow: 1;
 }
 
@@ -534,7 +537,7 @@ footer {
 .details-link {
     display: inline-block;
     padding: 10px 20px;
-    background: linear-gradient(135deg, #28a745, #218838);
+    background: var(--accent-color);
     color: white;
     text-decoration: none;
     border-radius: 25px;
@@ -560,6 +563,7 @@ footer {
     }
     .sidebar {
         flex: none;
+        width: auto;
     }
 }
 
