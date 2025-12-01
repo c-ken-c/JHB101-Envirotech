@@ -600,3 +600,18 @@ footer {
     #hero p { font-size: 1rem; }
     h2 { font-size: 1.8rem; }
 }
+
+ /* --- 手機版優化：導覽列改為三欄式 --- */
+@media (max-width: 768px) {
+    header nav ul {
+    display: flex;         /* 啟用 Flexbox */
+    flex-wrap: wrap;       /* 允許項目換行 */
+    justify-content: center; /* 讓項目在容器中置中 */
+    padding-top: 15px;     /* 增加一點頂部空間 */
+    }
+    header nav li {
+    flex: 1 0 30%;         /* 設定每個項目的基礎寬度約為 1/3 */
+    text-align: center;    /* 讓文字置中 */
+    margin-bottom: 15px;   /* 增加項目之間的垂直間距 */
+    }
+}
