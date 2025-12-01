@@ -137,7 +137,7 @@
     <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Category switching logic
+            // Category switching logic (您原有的程式碼)
             const categoryButtons = document.querySelectorAll('.category-btn');
             const categoryContents = document.querySelectorAll('.category-content');
 
@@ -177,14 +177,23 @@
                 animateCards(initialActiveContent);
             }
 
-            // PDF Lightbox logic
+            // PDF Lightbox logic (已更新為手機判斷版本)
             document.body.addEventListener('click', function(event) {
+                // 只處理帶有 'show-pdf-button' class 的連結
                 if (event.target.matches('.show-pdf-button')) {
-                    event.preventDefault();
+                    event.preventDefault(); // 無論如何都先阻止預設點擊行為
                     const pdfUrl = event.target.getAttribute('href');
-                    basicLightbox.create(`
-                        <iframe src="${pdfUrl}" style="width: 80vw; height: 80vh;" frameborder="0"></iframe>
-                    `).show();
+
+                    // 判斷螢幕寬度 (大於 768px 視為桌面版，否則為手機版)
+                    if (window.innerWidth > 768) {
+                        // --- 電腦版：使用彈出視窗 ---
+                        basicLightbox.create(`
+                            <iframe src="${pdfUrl}" style="width: 80vw; height: 80vh;" frameborder="0"></iframe>
+                        `).show();
+                    } else {
+                        // --- 手機版：在新分頁開啟 ---
+                        window.open(pdfUrl, '_blank');
+                    }
                 }
             });
         });
