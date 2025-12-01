@@ -630,8 +630,8 @@ footer {
         text-align: center;
     }
     .logo { margin-bottom: 15px; }
-    nav ul { flex-direction: column; align-items: center; } /* 導覽列項目垂直排列 */
-    nav ul li { margin: 10px 0; }
+    /* nav ul { flex-direction: column; align-items: center; } *//* 導覽列項目垂直排列 */
+    /* nav ul li { margin: 10px 0; } */
     #hero h2 { font-size: 2.5rem; }
     #hero p { font-size: 1.2rem; }
     h2 { font-size: 2rem; }
@@ -665,3 +665,4 @@ footer {
         margin-bottom: 15px;   /* 增加項目之間的垂直間距 */
     }
 }
+
