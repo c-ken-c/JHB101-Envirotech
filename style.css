@@ -667,21 +667,43 @@ footer {
     }
 }
 
-/* --- 優化導覽列與語言切換器排列 --- */
-        header nav {
-        display: flex; /* 啟用 Flexbox，讓子元素 (<ul> 和 <div#language-switcher>) 水平排列 */
-        align-items: center; /* 將所有項目垂直置中對齊 */
-        gap: 20px; /* 在導覽列 (<ul>) 和語言切換器之間增加 20px 的間距 */
-        }
-
-        /* 新增：防止選單項目文字被不當換行 */
-         header nav ul li {
-             white-space: nowrap;
-         }
+   /* --- 優化導覽列與語言切換器排列 --- */
+   header nav {
+    display: flex;
+   align-items: center;
+   gap: 20px; /* 在導覽列和語言切換器之間增加 20px 的間距 */
+   }
+   
+   /* 新增：防止選單項目文字被不當換行 */
+    header nav ul li {
+   white-space: nowrap;
+   }
+   }
         /* 如果您希望導覽列和語言切換器都盡量靠右對齊，可以使用 justify-content: flex-end; */
         justify-content: flex-end; 
         }
 
+    /* --- 調整特定文字大小 --- */
+    
+    /* 承信環境科技股份有限公司 (Logo 中的標題) */
+    .logo h1 {
+   font-size: 1.4rem; /* 電腦版大小 (原為 1.8rem，縮小至 1.4rem) */
+    }
+    
+    /* 導覽列連結 (公司介紹, 產品介紹, 設備型錄, 技術資料, 聯絡我們) */
+    nav ul li a {
+   font-size: 0.9rem; /* 電腦版大小 (約為預設的 90%) */
+   }
+  
+   /* --- 手機版調整 (針對小螢幕進一步縮小) --- */
+   @media (max-width: 768px) {
+   .logo h1 {
+   font-size: 1.2rem; /* 手機版 Logo 標題大小 */
+   }
+    nav ul li a {
+   font-size: 0.8rem; /* 手機版導覽列連結大小 */
+   }
+   }
 
 
 
