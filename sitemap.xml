@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- 首頁 -->
   <url>
     <loc>https://www.jhb-envirotech.com.tw/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
+
+  <!-- 型錄頁 -->
+  <url>
+    <loc>https://www.jhb-envirotech.com.tw/catalog.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 產品介紹頁（如果 products 在同頁，可忽略） -->
+  <url>
+    <loc>https://www.jhb-envirotech.com.tw/#products</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 公司介紹 -->
+  <url>
+    <loc>https://www.jhb-envirotech.com.tw/#about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 技術資料 -->
+  <url>
+    <loc>https://www.jhb-envirotech.com.tw/#technology</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 聯絡我們 -->
+  <url>
+    <loc>https://www.jhb-envirotech.com.tw/#contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
