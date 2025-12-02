@@ -667,4 +667,13 @@ footer {
     }
 }
 
+/* --- 優化導覽列與語言切換器排列 --- */
+        header nav {
+        display: flex; /* 啟用 Flexbox，讓子元素 (<ul> 和 <div#language-switcher>) 水平排列 */
+        align-items: center; /* 將所有項目垂直置中對齊 */
+        gap: 20px; /* 在導覽列 (<ul>) 和語言切換器之間增加 20px 的間距 */
+        /* 如果您希望導覽列和語言切換器都盡量靠右對齊，可以使用 justify-content: flex-end; */
+        /* justify-content: flex-end; */
+}
+
 
