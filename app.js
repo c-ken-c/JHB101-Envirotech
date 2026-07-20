@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     const languageSwitcher = document.getElementById('language-switcher');
-    let currentLang = localStorage.getItem('lang') || getBrowserLang() || 'zh-TW';
 
     const setLanguage = async (lang) => {
         const response = await fetch(`${lang}.json`);
@@ -29,6 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return null;
     };
 
+    let currentLang = localStorage.getItem('lang') || getBrowserLang() || 'zh-TW';
+
     const updateSwitcherUI = (lang) => {
         document.querySelectorAll('#language-switcher button').forEach(button => {
             if (button.getAttribute('data-lang') === lang) {
@@ -39,16 +40,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    languageSwitcher.addEventListener('click', (event) => {
-        const lang = event.target.getAttribute('data-lang');
-        if (lang && lang !== currentLang) {
-            currentLang = lang;
-            setLanguage(lang);
-        }
-    });
+    if (languageSwitcher) {
+        languageSwitcher.addEventListener('click', (event) => {
+            const lang = event.target.getAttribute('data-lang');
+            if (lang && lang !== currentLang) {
+                currentLang = lang;
+                setLanguage(lang);
+            }
+        });
 
-    // Initial load
-    setLanguage(currentLang);
+        // Initial load
+        setLanguage(currentLang);
+    }
 
 
     // --- Category switching logic from original file ---
