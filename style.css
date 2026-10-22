@@ -707,22 +707,3 @@ footer {
 
 
 
-
-/* FEDCO additions: existing agency, product, technology and catalog cards retained. */
-.fedco-awards { margin-top:20px; border-top:1px solid var(--border-color); padding-top:15px; }
-.fedco-awards summary { cursor:pointer; color:var(--primary-color); font-weight:600; }
-.fedco-awards ul { line-height:1.9; padding-left:22px; }
-.fedco-award-images { display:flex; flex-wrap:wrap; align-items:center; gap:25px; }
-.fedco-award-images figure { margin:0; flex:1 1 220px; max-width:380px; }
-.fedco-award-images img { display:block; width:100%; height:auto; border-radius:5px; }
-.fedco-award-images figcaption { font-size:.8rem; color:#666; margin-top:7px; }
-.fedco-catalog-link,.fedco-official-link { color:var(--primary-color); text-decoration:underline; font-size:.9rem; }
-.fedco-catalog-link { display:inline-block; margin-top:8px; }
-.fedco-official-link { display:block; margin-top:12px; }
-.fedco-category-note { color:#555; font-size:.9rem; margin-bottom:25px; }
-.fedco-pdf-dialog { position:relative; }
-.fedco-pdf-close { position:absolute; right:0; top:-40px; background:white; color:var(--primary-color); border:0; border-radius:4px; padding:6px 15px; cursor:pointer; }
-.content-area { min-width:0; }
-#brand-fedco,.fedco-product,.category-content { scroll-margin-top:110px; }
-@media(max-width:992px) { #brand-fedco,.fedco-product,.category-content { scroll-margin-top:200px; } }
-@media(max-width:768px) { .products-grid { grid-template-columns:minmax(0,1fr); } }
