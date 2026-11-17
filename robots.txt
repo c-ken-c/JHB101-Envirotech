@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://www.jhb-envirotech.com.tw/sitemap.xml

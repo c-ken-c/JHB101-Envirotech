@@ -157,7 +157,7 @@ nav ul li a.active-nav-link {
 /* 3. Hero Section (主視覺區) */
 /* =================================== */
 #hero {
-    background: url('https://raw.githubusercontent.com/rawpixel_images/5903616/photo-image-background-public-domain-blue.jpg') no-repeat center center/cover;
+    background: #07599b;
     color: white;
     text-align: center;
     padding: 80px 20px;
